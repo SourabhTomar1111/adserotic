@@ -1,0 +1,373 @@
+<!-- Begin Page Content -->
+<div class="container-fluid campaigns">
+  <%- include('../layouts/alerts') %>
+
+  <!-- Page Heading -->
+  <div
+    class="align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark"
+  >
+    <h1 class="h3 mb-0 text-white">Campaigns</h1>
+    <P class="mt-2">An overview of all campaigns in your account.</P>
+  </div>
+
+  <!-- ===================================== form section start =====================================-->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="campaigns">
+        <div class="hero border-dark border-1 rounded mb-5">
+          <div class="py-5 px-4 text-center">
+            <!-- ================ form ================ -->
+
+            <form class="text-left">
+              <!-- ================ 1st row ================ -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label
+                          for="exampleFormControlSelect1"
+                          class="text-color"
+                          >(Stats Date Range) Start date</label
+                        >
+                        <input
+                          class="form-control"
+                          type="date"
+                          id="startdate1"
+                          name="date"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label
+                          for="exampleFormControlSelect1"
+                          class="text-color"
+                          >End date</label
+                        >
+                        <input
+                          class="form-control"
+                          type="date"
+                          id="enddate1"
+                          name="date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2" class="text-color"
+                      >Campaign Status</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect2">
+                      <option>All But Deleted</option>
+                      <option>Running</option>
+                      <option>Paused</option>
+                      <option>Not Running</option>
+                      <option>All campaigns</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect3" class="text-color"
+                      >Campaign ID/Name</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect3">
+                      <option disabled selected hidden>All Campaigns</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================ 2nd row ================ -->
+              <div class="row mt-4">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect4" class="text-color"
+                      >Dimension</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect4">
+                      <option disabled selected hidden>All Dimensions</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect5" class="text-color"
+                      >Target Group</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect5">
+                      <option disabled selected hidden>
+                        All Target Groups
+                      </option>
+                      <option>Straight</option>
+                      <option>Gay</option>
+                      <option>Trans</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect6" class="text-color"
+                      >Targeting</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect6">
+                      <option disabled selected hidden>
+                        All Targeting Types
+                      </option>
+                      <option>Campaign Schedule</option>
+                      <option>GEO</option>
+                      <option>ISP</option>
+                      <option>IP</option>
+                      <option>Keyword</option>
+                      <option>Mobile Connection</option>
+                      <option>Operating System</option>
+                      <option>Browser</option>
+                      <option>Context Page</option>
+                      <option>Browser Language</option>
+                      <option>Postal Code</option>
+                      <option>Audience Exclusion Pixel</option>
+                      <option>Retargeting</option>
+                      <option>Segment</option>
+                      <option>Public Segment</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect7" class="text-color"
+                      >Device</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect7">
+                      <option disabled selected hidden>All Devices</option>
+                      <option>Mobile</option>
+                      <option>Desktop</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================ 3rd row ================ -->
+              <div class="row mt-4">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect8" class="text-color"
+                      >Ad Format</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect8">
+                      <option disabled selected hidden>All Ad Format</option>
+                      <option>Display</option>
+                      <option>In-Stream Video</option>
+                      <option>Pop</option>
+                      <option>Redirect</option>
+                      <option>Tab</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect9" class="text-color"
+                      >Site/Network</label
+                    >
+                    <select class="form-control" id="exampleFormControlSelect9">
+                      <option disabled selected hidden>
+                        All Site/Networks
+                      </option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect10" class="text-color"
+                      >Source Name/ID</label
+                    >
+                    <select
+                      class="form-control"
+                      id="exampleFormControlSelect10"
+                    >
+                      <option disabled selected hidden>All Sources</option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect11" class="text-color"
+                      >Exchange</label
+                    >
+                    <select
+                      class="form-control"
+                      id="exampleFormControlSelect11"
+                    >
+                      <option disabled selected hidden>All Exchanges</option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================ 4th row ================ -->
+              <div class="row mt-4">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect12" class="text-color"
+                      >Labels</label
+                    >
+                    <select
+                      class="form-control"
+                      id="exampleFormControlSelect12"
+                    >
+                      <option disabled selected hidden>All Labels</option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect13" class="text-color"
+                      >Rule Name</label
+                    >
+                    <select
+                      class="form-control"
+                      id="exampleFormControlSelect13"
+                    >
+                      <option disabled selected hidden>All Rules</option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect14" class="text-color"
+                      >Events</label
+                    >
+                    <select
+                      class="form-control"
+                      id="exampleFormControlSelect14"
+                    >
+                      <option disabled selected hidden>All Events</option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect15" class="text-color"
+                      >Multi Campaign Search</label
+                    >
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-md-12 d-flex justify-content-center">
+                  <button type="button" class="btn btn-outline-warning m-2">
+                    Apply Filters
+                  </button>
+                  <button type="button" class="btn-purple m-2">
+                    Clear Filters
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- ================ form ================ -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== form section End =======================================-->
+  <!-- ===================================== table section  =======================================-->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="hero">
+        <div class="hero border-dark border-1 rounded">
+          <div class="py-5 px-5">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr class="table-primary-color">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Page_id</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <% if(campData.length){ %>
+                  <% campData.forEach(function(camp){ %>
+                    <tr>
+                      <td><%= camp.id %></td>
+                      <td><%= camp.campaign_name %></td>
+                      <%let str1 = JSON.parse(camp.audience_exclusion_cookie) %>
+                      <td><%= str1[0].site_name%></td>
+                      <td>
+             
+                    <button type="button" class="btn btn-primary">
+                      <a
+                        data-id="<%= camp.id %>"
+                        role="button"
+                        href="/advertiser/payment/<%= camp.id %>"
+                      >
+                        Pay
+                      </a>
+                    </button>
+                  </td>
+
+                  <td>
+                    <a
+                      class="btn del-page-btn ml-3"
+                      data-id="<%= camp.id %>"
+                      role="button"
+                      title="Delete"
+                      ><i class="fas fa-trash"></i></a
+                    >&nbsp;<a
+                      href="/advertiser/campaign/<%= camp.id %>/view"
+                      class="btn show-page-btn ml-3"
+                      data-id="<%= camp.id %>"
+                      role="button"
+                      title="View"
+                      ><i class="fas fa-eye"></i
+                    ></a>
+                  </td>
+                </tr>
+                <% }); %>
+                <% } %>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

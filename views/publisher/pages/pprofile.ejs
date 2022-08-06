@@ -1,0 +1,143 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+        <%- include('../layouts/alerts') %>
+        <h1 class="h3 mb-0 text-white">User Profile</h1>
+        <P class="mt-2">Update your profile here
+        </P>
+    </div>
+
+    <!-- ===================================== form section start =====================================-->
+    <div class="row">
+        <div class="col-md-12">
+            <div id="refral-pro">
+                <div class="hero border-dark border-1 rounded mb-5">
+                    <div class="py-5 px-4 ">
+                        <!-- ================ form ================ -->
+                        <form method="post" >
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>Email :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="p1-email" value="<%= user.email %>"
+                                        disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>User Name :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="read" class="form-control" id="p1-uname" value="<%= user.username %>"
+                                        disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>First Name :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="p1-fname" name="firstname"
+                                        value="<%= user.firstname %>">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2 ">
+                                    <p>Last Name :</p>
+                                </div>
+                                <div class="col-md-10 ">
+                                    <input type="text" class="form-control" id="p1-lname" name="lastname"
+                                        value="<%= user.lastname %>">
+                                </div>
+                            </div>                            
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>Country :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="p1-country" name="country"
+                                        value="<%= user.country %>">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>Nationality :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <select name="nationality" class="form-control text-dark">
+                                        <option value="">Nationality</option>
+                                        <option value="Australia" <%=user.nationality=="Australia" ? "selected" : "" %>>Australian</option>
+                                        <option value="Canada" <%=user.nationality=="Canada" ? "selected" : "" %>>Canadian</option>
+                                        <option value="England" <%=user.nationality=="England" ? "selected" : "" %>>English</option>
+                                        <option value="China" <%=user.nationality=="China" ? "selected" : "" %>>Chinese</option>
+                                        <option value="France" <%=user.nationality=="France" ? "selected" : "" %>>French</option>
+                                        <option value="Germany" <%=user.nationality=="Germany" ? "selected" : "" %>>German</option>
+                                        <option value="India" <%=user.nationality=="India" ? "selected" : "" %>>Indian</option>
+                                        <option value="Japan" <%=user.nationality=="Japan" ? "selected" : "" %>>Japanese</option>
+                                        <option value="Nigeria" <%=user.nationality=="Nigeria" ? "selected" : "" %>>Nigerian</option>
+                                        <option value="Poland" <%=user.nationality=="Poland" ? "selected" : "" %>>Poland</option>
+                                        <option value="Portugal" <%=user.nationality=="Portugal" ? "selected" : "" %>>Portuguese</option>
+                                        <option value="Russia" <%=user.nationality=="Russia" ? "selected" : "" %>>Russian</option>
+                                        <option value="Spain" <%=user.nationality=="Spain" ? "selected" : "" %>>Spanish</option>
+                                        <option value="US" <%=user.nationality=="US" ? "selected" : "" %>>American</option>
+                                        <option value="Wales" <%=user.nationality=="Wales" ? "selected" : "" %>>Welsh</option>
+                                        <option value="Zimbabwe" <%=user.nationality=="Zimbabwe" ? "selected" : "" %>>Zimbabwean</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>Currency :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <select name="currency" class="form-control text-dark">
+                                        <option value="">Currency</option>
+                                        <option value="EUR" <%=user.currency=="EUR" ? "selected" : "" %>>EUR</option>
+                                        <option value="USD" <%=user.currency=="USD" ? "selected" : "" %>>USD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>SkyID :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="p1-skype" name="skype_id"
+                                        value="<%= user.skype_id %>">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                    <p>Company :</p>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="read" class="form-control" id="p1-company" name="company_name"
+                                        value="<%= user.company_name %>">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    <button class="btn btn-outlined">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- ================ form ================ -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===================================== form section End =======================================-->
+
+
+
+
+</div>
+<!-- /.container-fluid -->

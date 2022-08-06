@@ -1,0 +1,94 @@
+<section class= "bg-gradient-primary" >
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div class="card rounded-3">
+          <div class="card-body mx-1 my-2">
+            <div class="d-flex align-items-center">
+              <div>
+                <p class="d-flex flex-column mb-0">
+                  <b>PayPal Payment</b><span class="small text-muted">Do it</span>
+                </p>
+              </div>
+            </div>
+            <form class="form-horizontal" role="form" action="/pay" method="post">
+                    <input
+                    type ="hidden"
+                    name="page"
+                    class=" text-center mb-0 text-primary"
+                    value="<%= campData %>"
+                    >
+                    <input
+                      type ="hidden"
+                      name="Advertiser_User_Id"
+                      class=" text-center mb-0 text-primary"
+                      value="<%=  user_id %>"
+                    >
+                    <input
+                      type ="hidden"
+                      name="media_id"
+                      class=" text-center mb-0 text-primary"
+                      value="<%=  media_id %>"
+                    >
+                    <input
+                      type ="hidden"
+                      name="campaign_id"
+                      class=" text-center mb-0 text-primary"
+                      value="<%= id %>"
+                    >
+                    <% if(campDataId.length){ %> 
+                    <% campDataId.forEach(function(camp){
+                    %> <% if( campData == camp.id){ %>
+                    <input
+                    type="hidden"
+                    class=" form-control-sm text-center"
+                    placeholder="Enter Amount"
+                    value="<%= camp.user_id %>"
+                    id="publisher"
+                    name="publisher_url_id"
+                    style="width: 55px"
+                    >
+<% } %> <% });%> <% } %>
+                  
+            
+               
+             
+              <div class="d-flex flex-row pb-3">
+                <div class="rounded border d-flex w-100 px-3 py-2 align-items-center">
+                  <div class="d-flex flex-column py-1">
+                    <p class="mb-1 small text-primary">Amount :</p>
+                    <div class="d-flex flex-row align-items-center">
+                      <h6 class="mb-0 text-primary pe-1">$</h6>
+                      <% if(campDataId.length){ %> 
+                        <% campDataId.forEach(function(camp){
+                      %> <% if( campData == camp.id){ %>
+                      <input
+                        type="hidden"
+                        class=" form-control-sm text-center"
+                        placeholder="Enter Amount"
+                        id="amount"
+                        value= "<%= camp.price %>"
+                        name="amount"
+                        style="width: 55px;"
+                       >
+                       <span><%= camp.price %></span>
+                      <% }  %> 
+                      <% });%> 
+                      <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pb-1">
+              <a href="/advertiser/campaigns" class="text-muted btn btn-outline-success ">Go back</a>
+              <input type="submit" class="btn btn-outline-success ali" value="Pay">
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/public/javascripts/script.js"></script>

@@ -1,0 +1,79 @@
+
+
+     <!-- Begin Page Content -->
+<div class="container-fluid">
+  <%- include('../layouts/alerts') %>
+
+  <!-- Page Heading -->
+  <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+      <h1 class="h3 mb-0 text-white">Transaction</h1>
+      <!-- <P class="mt-2">Get your Referral URL as well as keep track of your past referral and bonuses. -->
+      </P>
+  </div>
+
+  <!-- ===================================== table section  =======================================-->
+
+ <div class="row">
+      <div class="col-md-12">
+          <div id="hero">
+             <div class="hero border-dark border-1 rounded">
+                 <div class="py-5 px-5 ">
+               <div class="table-responsive">
+                  <table class="table" >
+                      <thead>
+                        <tr class="table-primary-color">
+                          <th scope="col">UserName</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">CampaignName</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Url</th>
+                          <th scope="col">Image</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Date</th>
+                        </tr>
+                      </thead>
+                      <% if(tbl_transaction.length){ %>
+                          <% tbl_transaction.forEach(function(trans){ %>
+                              <tr>
+                                  <td><%= trans.username %></td>
+                                  <td><%= trans.price %></td>
+                                  <td><%= trans.campaign_name %></td> 
+                                  <td><%= trans.category %></td> 
+                                  <td><%= trans.url %></td> 
+                                  <td><div  width="250" height="250" id="frame" class="image">
+                                    <% if(trans.type === 1 || trans.type === 2){ %>
+                                      <img width="100" height="100" src="/public/static_banner/<%= trans.name %> " />
+                                    <% } else{ %>  
+                                      <video  width="150" height="150" controls>
+                                        <source src="/public/video_banner/<%= trans.name %>" type="video/mp4">
+                                      </video>
+                                   <% } %>
+                                  </div></td>
+                                  <td><%= trans.status %></td> 
+                                  <td><%= trans.date.toDateString() %></td> 
+                              </tr>
+                          <% }); %>
+                      <% } %>
+                    
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                 </div>
+             </div>
+          </div>
+      </div>
+   </div>
+
+   
+
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+
+
+

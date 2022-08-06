@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    <div id="contact_us" class="contact_us pt-5">
+      <%- include('../layouts/alerts') %>
+      <div class="form">
+        <div class="for_pass-title pb-2">
+          <h2 class="mb-4">Contact Us</h2>
+          <p class="text-center contact_para">
+            Our team is always available to answer your queries. Be sure to go
+            through FAQ before sending the question to find the solution as fast
+            as possible.
+          </p>
+        </div>
+
+        <form class="for_pass_form" method="post" action="/contact">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+          <input
+            type="password"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          <div class="">
+            <select id="user" name="user" class="form-select nation_select">
+              <option selected>I AM</option>
+              <option value="publisher">Publisher</option>
+              <option value="advertiser">Advertiser</option>
+            </select>
+          </div>
+
+          <div class="">
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Your message*"
+            ></textarea>
+          </div>
+
+          <button class="Conform_pass mt-4">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

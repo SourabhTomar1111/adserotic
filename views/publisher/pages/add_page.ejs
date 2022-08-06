@@ -1,0 +1,115 @@
+<!-- Begin Page Content -->
+<div class="container-fluid addedit">
+    <%- include('../layouts/alerts') %>
+
+        <!-- Page Heading -->
+        <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+            <h1 class="h3 mb-0 text-white">New Page</h1>
+            <P class="mt-2">Create a new page.</P>
+            <!-- <P class="mt-2 mb-0 text-white">Step 1. Create a Campaigns</P> -->
+            <!-- <P class="mt-2">Select your page Url,  settings, schedule, target audience and placement.</P> -->
+        </div>
+
+        <!-- ============================== form section start =============================-->
+        <section class="frm-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="add-page">
+                        <div class="hero border-dark border-1 rounded mb-5">
+                            <div class="px-4 text-center">
+                                <div class="text-left">
+                                    <form class="text-left" action="" method="post">
+                                        <div class="row mt-4 ">
+                                            <div class="col-md-12">
+                                                <div class="form-group ">
+                                                    <label for="url" class="text-color">URL <span class="text-gray-600">
+                                                            (Add page URL for showing the ads on it.)</span></label>
+                                                    <input type="url" class="form-control" id="url" name="url">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4 ">
+                                            <div class="col-md-12">
+                                                <div class="form-group ">
+                                                    <label for="description" class="text-color">Description <span
+                                                            class="text-gray-600"> (Add Page description for helping in
+                                                            add
+                                                            ads on it.)</span></label>
+                                                    <textarea class="form-control" id="description" name="description"
+                                                        rows="8"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="category" class="text-color">Category
+                                                        <span class="text-gray-600"> (Select the category of the
+                                                            ads.)</span> </label>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <select class="form-control" id="category" name="category">
+                                                                <option disabled selected hidden>Select Category
+                                                                </option>
+                                                                <option value="1">Straight</option>
+                                                                <option value="2">Gay</option>
+                                                                <option value="3">Trans</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="state" class="text-color">State
+                                                        <span class="text-gray-600"> (Choose the state)</span>
+                                                    </label>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <select class="form-control" id="state" name="state">
+                                                                <option disabled selected hidden>Select State
+                                                                </option>
+                                                                <option value="1">Active</option>
+                                                                <option value="0">DeActive</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="price" class="text-color">Price
+                                                        <span class="text-gray-600"> (Select the Price of the
+                                                            ads.)</span> </label>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <input type="price" class="form-control" id="price" name="price">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-5">
+                                            <div class="col-md-12 d-flex justify-content-center">
+                                                <button type="submit" class="btn btn-success m-2">Create</button>
+                                                <button type="button" class="btn-purple m-2">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+<!-- End of Main Content -->
+

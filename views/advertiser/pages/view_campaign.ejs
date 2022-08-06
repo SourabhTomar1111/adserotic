@@ -1,0 +1,1148 @@
+<!-- Begin Page Content -->
+<div class="container-fluid addedit">
+    <%- include('../layouts/alerts') %>
+    <!-- Page Heading -->
+    <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+       <h1 class="h3 mb-0 text-white">View Campaign</h1>       
+    </div>
+    <!-- ===================================== form section start =====================================-->
+    <section>
+       <section>
+          <div class="row">
+             <div class="col-md-12">
+                <div id="add-campaigns">
+                   <div class="hero border-dark border-1 rounded mb-5">
+                      <div class="py-5 px-4 text-center">
+                         <div class="row">
+                            <div class="col-md-12 text-center">
+                               <h6 class="text-color font-weight-bold">BASIC SETTINGS</h6>
+                            </div>
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-4 ">
+                               <div class="col-md-3">
+                                  <div class="form-group ">
+                                     <label for="exampleFormControlSelect15" class="text-color">Campaign
+                                     Name</label>
+                                     <div  class="form-control"><%= campData.campaign_name; %></div>
+                                  </div>
+                               </div>
+                            </div>
+                        
+                            <div class="row mt-1 ">
+                               <div class="col-md-12 ">
+                                  <div class="form-group ">
+                                     <label for="exampleFormControlSelectg1" class="text-color">Campaign
+                                     Group Name
+                                     <span class="text-gray-600">(Organize your
+                                     campaigns by grouping
+                                     them just
+                                     like folders on your computer (maximum 61
+                                     groups)).</span>
+                                     </label>
+                                     <div class="row">
+                                        <div class="col-md-3">
+                                           <ul>
+                                              <% if(grpData.length){ %>
+                                              <% grpData.forEach(function(grp){ %>
+                                              <% if(campData.group_id == grp.id){ %>
+                                              <li><%= grp.name %></li>
+                                              <% } %>
+                                              <% }); %>
+                                              <% } %>
+                                           </ul>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label for="exampleFormControlSelectg2" class="text-color">Labels
+                                     <span class="text-gray-600"> (Find related
+                                     campaigns faster by tagging
+                                     them
+                                     with up to six labels).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-3">
+                                           <ul>
+                                              <% if(lblData.length){ %>
+                                              <% lblData.forEach(function(lbl){ %>
+                                              <% if(campData.label_ids == lbl.id){ %>
+                                              <li>
+                                                 <%= lbl.title %>
+                                              </li>
+                                              <% } %>
+                                              <% }); %>
+                                              <% } %>
+                                           </ul>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label for="exampleFormControlSelectg2" class="text-color">Device
+                                     <span class="text-gray-600"> (Select the device
+                                     you want your ads to
+                                     be
+                                     displayed on).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-3 radio-tab">
+                                           <div class="btn-group btn-group-toggle"
+                                              data-toggle="buttons">
+                                              <label class="btn btn-secondary active">
+                                              <input type="radio" name="device_type" value="all"
+                                                 id="option1" <%= campData.device_type == 'all' ? 'checked' : '' %> >
+                                              All
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="device_type"
+                                                 value="desktop" id="option2"  <%= campData.device_type == 'desktop' ? 'checked' : '' %>>
+                                              Desktop
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="device_type"
+                                                 value="mobile" id="option3"  <%= campData.device_type == 'mobile' ? 'checked' : '' %>>
+                                              Mobile
+                                              </label>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <!-- <div class="row mt-1 ">
+                               <div class="col-md-12 ">
+                                   <div class="form-group ">
+                                       <label for="exampleFormControlSelectg1"
+                                           class="text-color">Conversion
+                                           Tracker
+                                           <span class="text-gray-600">(Select the
+                                               tracker(s) you want to add
+                                               to your
+                                               campaign).</span> </label>
+                                       <div class="row">
+                                           <div class="col-md-3">
+                                               <div  class="form-control"><%= campData.tracker; %></div>
+                                           </div>                                                        
+                                       </div>
+                                   </div>
+                               </div>
+                               </div> -->
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label for="exampleFormControlSelectg2" class="text-color">Ad
+                                     Format<span class="text-gray-600"> (Select the
+                                     ad format your
+                                     campaign will
+                                     contain).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-t ml-3">
+                                              <input type="radio" name="ad_format" id="one" value="1"
+                                                 data-toggle-target="displayAds"  <%= campData.ad_format == '1' ? 'checked' : '' %> />
+                                              <label class="lable" for="one">Display</label>
+                                              <input class="" type="radio" name="ad_format" id="two"
+                                                 value="2" data-toggle-target="videoAds"  <%= campData.ad_format == '2' ? 'checked' : '' %> />
+                                              <label class="lable" for="two">In-Stream
+                                              Video</label>
+                                              <p class="text-color">Ad Dimension<span
+                                                 class="text-gray-600">
+                                                 (Select the size of the ads your
+                                                 campaign will
+                                                 contain).</span>
+                                              </p>
+                                              <div class="content one" data-toggle="displayAds"
+                                                 data-toggle-group="ad_format">
+                                                 <div class="form-group">
+                                                    <div class="row">
+                                                       <div class="col-md-3">
+                                                          <% if(campData.ad_dimension_size){ %>
+                                                          <div class="form-control">
+                                                             <%= campData.ad_dimension_size %>
+                                                          </div>
+                                                          <% } %>                                                                                
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                              <div class="content two d-none" data-toggle="videoAds"
+                                                 data-toggle-group="ad_format">
+                                                 <div class="row">
+                                                    <div class="col-md-3">
+                                                       <p class="bg-light p-2 rounded">Video
+                                                          needs to be 16:9
+                                                          Ratio
+                                                       </p>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- ===================================== form --1 End =======================================-->
+       <section>
+          <div class="row">
+             <div class="col-md-12">
+                <div id="add-campaigns">
+                   <div class="hero border-dark border-1 rounded mb-5">
+                      <div class="py-5 px-4 text-center">
+                         <div class="row">
+                            <div class="col-md-12 text-center">
+                               <h6 class="text-color font-weight-bold">SCHEDULE</h6>
+                            </div>
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Duration <span class="text-gray-600">
+                                     (Define
+                                     your
+                                     campaign start and end dates).</span>
+                                     </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="duration" value="0" id="off-1"
+                                                 <%= campData.duration == '0' ? 'checked' : '' %>
+                                                 data-toggle-target="durationWrapper" />
+                                              <label class="lable" for="off-1">OFF</label>
+                                              <input class="" type="radio" name="duration" value="1" id="on-1"
+                                                 data-toggle-target="durationWrapper" <%= campData.duration == '1' ? 'checked' : '' %> />
+                                              <label class="lable" for="on-1">ON</label>
+                                              <div class="content off-1">
+                                              </div>
+                                              <div class="content on-1 expandable <%= campData.duration == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="durationWrapper">
+                                                 <div class="row">
+                                                    <div class="col-md-12">
+                                                       <div class="text-left">
+                                                          <div class="row ">
+                                                             <div class="col-md-10">
+                                                                <div class="row d-block">
+                                                                   <div class="col-md-9">
+                                                                      <div
+                                                                         class="form-group ">
+                                                                         <label
+                                                                            for="exampleFormControlSelect001"
+                                                                            class="text-color">Start
+                                                                         date</label>
+                                                                         <% if(campData.ad_start_at){ %>
+                                                                         <div class="form-control">
+                                                                            <%= campData.ad_start_at %>
+                                                                         </div>
+                                                                         <% } %>      
+                                                                      </div>
+                                                                   </div>
+                                                                   <div class="col-md-9">
+                                                                      <div
+                                                                         class="form-group ">
+                                                                         <label
+                                                                            for="exampleFormControlSelect001"
+                                                                            class="text-color">End
+                                                                         date</label>
+                                                                         <% if(campData.ad_start_at){ %>
+                                                                         <div class="form-control">
+                                                                            <%= campData.ad_end_at %>
+                                                                         </div>
+                                                                         <% } %>    
+                                                                      </div>
+                                                                   </div>
+                                                                </div>
+                                                             </div>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12 ">
+                                  <div class="form-group">
+                                     <label class="text-color">Frequency Capping <span
+                                        class="text-gray-600">
+                                     (Set
+                                     how many times a visitor will see your
+                                     campaign over a
+                                     designated time
+                                     unit).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="ad_frequency_capping"
+                                                 value="0" id="off-2" <%= campData.frequency_capping == '0' ? 'checked' : '' %>
+                                                 data-toggle-target="frequencyWrapper" />
+                                              <label class="lable" for="off-2">OFF</label>
+                                              <input class="" type="radio" name="ad_frequency_capping"
+                                                 value="1" id="on-2" <%= campData.frequency_capping == '1' ? 'checked' : '' %>
+                                                 data-toggle-target="frequencyWrapper" />
+                                              <label class="lable" for="on-2">ON</label>
+                                              <div class="content off-2">
+                                              </div>
+                                              <div class="content on-2  expandable <%= campData.frequency_capping == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="frequencyWrapper">
+                                                 <div class="row d-block">
+                                                    <div class="text-left">
+                                                       <div class="col-md-2">
+                                                          <div class="form-group time-in">
+                                                             <% if(campData.frequency_cap_times){ %>
+                                                             <div class="form-control">
+                                                                <%= campData.frequency_cap_times %>
+                                                             </div>
+                                                             <% } %>    
+                                                          </div>
+                                                       </div>
+                                                       <div class="col-md-3">
+                                                          <p class="text-color">
+                                                             time(s) to a visitor
+                                                             every
+                                                          </p>
+                                                       </div>
+                                                       <div class="col-md-2">
+                                                          <div class="form-group time-in">
+                                                             <% if(campData.frequency_cap_every){ %>
+                                                             <div class="form-control">
+                                                                <%= campData.frequency_cap_every %>
+                                                             </div>
+                                                             <% } %>  
+                                                          </div>
+                                                       </div>
+                                                       <div class="col-md-3">
+                                                          <% if(campData.frequency_cap_units){ %>
+                                                          <div class="form-control">
+                                                             <%= campData.frequency_cap_units %>
+                                                          </div>
+                                                          <% } %>  
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- ===================================== form --2 End  =====================================-->
+       <section>
+          <div class="row">
+             <div class="col-md-12">
+                <div id="add-campaigns">
+                   <div class="hero border-dark border-1 rounded mb-5">
+                      <div class="py-5 px-4 text-center">
+                         <div class="row">
+                            <div class="col-md-12 text-center">
+                               <h6 class="text-color font-weight-bold">AUDIENCE</h6>
+                            </div>
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label for="exampleFormControlSelectg2" class="text-color">Content
+                                     Category
+                                     <span class="text-gray-600"> ( Select the
+                                     content preference of the
+                                     audience
+                                     you would like to target).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-3 radio-tab">
+                                           <div class="btn-group btn-group-toggle"
+                                              data-toggle="buttons">
+                                              <label class="btn btn-secondary active">
+                                              <input type="radio" name="category" value="straight" id="option01"
+                                                 <%= campData.category == 'straight' ? 'checked' : '' %>>
+                                              Straight
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="category" value="gay" id="option02" <%= campData.category == 'gay' ? 'checked' : '' %>>
+                                              Gay
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="category" value="trans" id="option03" <%= campData.category == 'trans' ? 'checked' : '' %>>
+                                              Trans
+                                              </label>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label for="exampleFormControlSelectg2"
+                                        class="text-color">Demographic
+                                     Targeting
+                                     <span class="text-gray-600"> ( Select the
+                                     demographic you would like
+                                     to
+                                     target.
+                                     By default All genders will be
+                                     targeted).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-3 radio-tab">
+                                           <p class="mt-2"> Gender</p>
+                                           <div class="btn-group btn-group-toggle"
+                                              data-toggle="buttons">
+                                              <label class="btn btn-secondary active">
+                                              <input type="radio" name="gender" value="all" id="option001"
+                                                 <%= campData.gender == 'all' ? 'checked' : '' %>> All
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="gender" value="male" id="option002" 
+                                                 <%= campData.gender == 'male' ? 'checked' : '' %>>
+                                              Male
+                                              </label>
+                                              <label class="btn btn-secondary">
+                                              <input type="radio" name="gender" value="female" id="option003"
+                                                 <%= campData.gender == 'female' ? 'checked' : '' %>                                                     >
+                                              Female
+                                              </label>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Audience Exclusion <span
+                                        class="text-gray-600">
+                                     (Prevent users who have already purchased
+                                     your product from
+                                     seeing your
+                                     ads for this campaign).</span> </label>
+                                     <p class="mt-2"> Pixel Targeting</p>
+                                     <div class="row ">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="audience_exclusion"
+                                                 value="0" id="off-3" <%= campData.audience_exclusion == '0' ? 'checked' : '' %>  
+                                                 data-toggle-target="audienceExclusionWrapper" />
+                                              <label class="lable" for="off-3">OFF</label>
+                                              <input class="" type="radio" name="audience_exclusion"
+                                                 value="1" id="on-3" <%= campData.audience_exclusion == '1' ? 'checked' : '' %>  
+                                                 data-toggle-target="audienceExclusionWrapper" />
+                                              <label class="lable" for="on-3">ON</label>
+                                              <div class="content off-3">
+                                              </div>
+                                              <div class="content on-3 expandable <%= campData.audience_exclusion == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="audienceExclusionWrapper">
+                                                 <div class="row d-block my-2">
+                                                    <div class="text-left">
+                                                    </div>
+                                                 </div>
+                                                 <div class="row cookie-table">
+                                                    <div class="col-md-12">
+                                                       <div id="hero">
+                                                          <div
+                                                             class="hero border-dark border-1 rounded">
+                                                             <div class="py-5 px-5 ">
+                                                                <div class="table-responsive">
+                                                                   <table class="table">
+                                                                      <thead>
+                                                                         <tr
+                                                                            class="table-primary-color">
+                                                                            <th scope="col">
+                                                                               Site
+                                                                               Name
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Name
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Value
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Age
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Invocation
+                                                                               Code
+                                                                            </th>
+                                                                         </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                         <% let aeC = JSON.parse(campData.audience_exclusion_cookie) %>
+                                                                         <% if(aeC.length){ %>
+                                                                         <% aeC.forEach(function(ae){ %>                                                                                                                    
+                                                                         <tr>
+                                                                            <td><%= ae.site_name %></td>
+                                                                            <td><%= ae.name %></td>
+                                                                            <td><%= ae.value %></td>
+                                                                            <td><%= ae.age %></td>
+                                                                            <td><a class="view-code-btn btn btn-secondary view-code-btn">view code</a></td>
+                                                                         </tr>
+                                                                         <% }); %>
+                                                                         <% } %>
+                                                                      </tbody>
+                                                                   </table>
+                                                                </div>
+                                                             </div>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Retargeting <span class="text-gray-600">
+                                     (Track people
+                                     who have visited your site and display your
+                                     retargeting ads as
+                                     they
+                                     visit other websites).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="retargeting" value="0" id="off-4"
+                                                 <%= campData.audience_retargeting == '0' ? 'checked' : '' %>
+                                                 data-toggle-target="retargetingWrapper" />
+                                              <label class="lable" for="off-4">OFF</label>
+                                              <input class="" type="radio" name="retargeting" value="1"
+                                                 <%= campData.audience_retargeting == '1' ? 'checked' : '' %> id="on-4" data-toggle-target="retargetingWrapper" />
+                                              <label class="lable" for="on-4">ON</label>
+                                              <div class="content off-4">
+                                              </div>
+                                              <div class="content on-4 expandable <%= campData.audience_retargeting == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="retargetingWrapper">
+                                                 <div class="row d-block my-2">
+                                                    <div class="text-left">
+                                                    </div>
+                                                 </div>
+                                                 <div class="row cookie-table">
+                                                    <div class="col-md-12">
+                                                       <div id="hero">
+                                                          <div
+                                                             class="hero border-dark border-1 rounded">
+                                                             <div class="py-5 px-5 ">
+                                                                <div class="table-responsive">
+                                                                   <table class="table">
+                                                                      <thead>
+                                                                         <tr
+                                                                            class="table-primary-color">
+                                                                            <th scope="col">
+                                                                               Site
+                                                                               Name
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Name
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Value
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Cookie
+                                                                               Age
+                                                                            </th>
+                                                                            <th scope="col">
+                                                                               Invocation
+                                                                               Code
+                                                                            </th>
+                                                                         </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                         <% let arT = JSON.parse(campData.audience_retargeting_cookie) %>
+                                                                         <% if(arT.length){ %>
+                                                                         <% arT.forEach(function(ar){ %>                                                                                                                    
+                                                                         <tr>
+                                                                            <td><%= ar.site_name %></td>
+                                                                            <td><%= ar.name %></td>
+                                                                            <td><%= ar.value %></td>
+                                                                            <td><%= ar.age %></td>
+                                                                            <td><a class="view-code-btn btn btn-secondary view-code-btn">view code</a></td>
+                                                                         </tr>
+                                                                         <% }); %>
+                                                                         <% } %>
+                                                                      </tbody>
+                                                                   </table>
+                                                                </div>
+                                                             </div>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- ===================================== form --3 End =======================================-->
+       <section>
+          <div class="row">
+             <div class="col-md-12">
+                <div id="add-campaigns">
+                   <div class="hero border-dark border-1 rounded mb-5">
+                      <div class="py-5 px-4 text-center">
+                         <div class="row">
+                            <div class="col-md-12 text-center">
+                               <h6 class="text-color font-weight-bold">TARGETING</h6>
+                            </div>
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Keyword Targeting <span
+                                        class="text-gray-600">
+                                     (Select
+                                     up to 30 target and 20 excluded keywords to
+                                     target specific
+                                     content , a
+                                     maximum of 4 broad are allowed).</span>
+                                     </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="keywordTarget" id="off-5"
+                                                 <%= campData.keyword_targeting == '0' ? 'checked' : '' %> value="0"
+                                                 data-toggle-target="keywordWrapper" />
+                                              <label class="lable" for="off-5">OFF</label>
+                                              <input class="" type="radio" name="keywordTarget"
+                                                 <%= campData.keyword_targeting == '1' ? 'checked' : '' %> value="1" id="on-5"
+                                                 data-toggle-target="keywordWrapper" />
+                                              <label class="lable" for="on-5">ON</label>
+                                              <div class="content on-5 expandable <%= campData.keyword_targeting== '1' ? '' : 'd-none' %>"
+                                                 data-toggle="keywordWrapper">
+                                                 <div class="row d-block">
+                                                    <div class="text-left">
+                                                       <div class="col-md-4">
+                                                          <div class="form-group time-in mt-2">
+                                                             <label class="text-color">Selected
+                                                             Keyword</label>
+                                                             <% if(campData.keyword_included){ %>
+                                                             <div class="form-control">
+                                                                <%= campData.keyword_included %>
+                                                             </div>
+                                                             <% } %> 
+                                                          </div>
+                                                       </div>
+                                                       <div class="col-md-4">
+                                                          <div class="form-group time-in mt-2">
+                                                             <label class="text-color">Excluded
+                                                             Keyword</label>
+                                                             <% if(campData.keyword_excluded){ %>
+                                                             <div class="form-control">
+                                                                <%= campData.keyword_excluded %>
+                                                             </div>
+                                                             <% } %> 
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Geo Targeting <span class="text-gray-600">
+                                     (Select one
+                                     country per campaign. Add up to 10 regions
+                                     or cities you would
+                                     like to
+                                     target).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="geoTarget" value="0"
+                                                 id="off-6" <%= campData.geo_targeting == '0' ? 'checked' : '' %>
+                                                 data-toggle-target="geoTargetingWrapper" />
+                                              <label class="lable" for="off-6">OFF</label>
+                                              <input class="" type="radio" name="geoTarget" value="1"
+                                                 id="on-6" <%= campData.geo_targeting == '1' ? 'checked' : '' %>
+                                                 data-toggle-target="geoTargetingWrapper" />
+                                              <label class="lable" for="on-6">ON</label>
+                                              <div class="content off-6">
+                                              </div>
+                                              <div class="content on-6 expandable <%= campData.geo_targeting == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="geoTargetingWrapper">
+                                                 <div class="row d-block">
+                                                    <div class="text-left">
+                                                       <div class="col-md-4">
+                                                          <div class="form-group time-in mt-2">
+                                                             <label
+                                                                class="text-color">Country</label>
+                                                             <div class="form-control"
+                                                                name="country"
+                                                                id="exampleFormControlSelect166">
+                                                                <%= campData.country %>
+                                                             </div>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">OS Targeting <span class="text-gray-600">
+                                     (Select the
+                                     OS you would like to target).</span>
+                                     <% let osD = JSON.parse(campData.os) %>
+                                     <%= osD[0] %>
+                                     </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="osTarget" value="0"
+                                                 id="off-7" <%= campData.os_targeting == '0' ? 'checked' : '' %>
+                                                 data-toggle-target="osTargetingWrapper" />
+                                              <label class="lable" for="off-7">OFF</label>
+                                              <input class="" type="radio" name="osTarget" 
+                                                 value="1"   <%= campData.os_targeting == '1' ? 'checked' : '' %>
+                                                 id="on-7" data-toggle-target="osTargetingWrapper" />
+                                              <label class="lable" for="on-7">ON</label>
+                                              <div class="content off-7">
+                                              </div>
+                                              <div class="content on-7 expandable <%= campData.os_targeting == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="osTargetingWrapper">
+                                                 <div class="text-left">
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os" value="iOS"
+                                                          id="osCheck1" <%= osD.filter(function(item){ return item == 'iOS' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck1">iOS</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os"
+                                                          value="Android" id="osCheck2" <%= osD.filter(function(item){ return item == 'Android' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck2">Android</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os"
+                                                          value="Windows Mobile" id="osCheck3" <%= osD.filter(function(item){ return item == 'Windows Mobile' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck3">Windows
+                                                       Mobile</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os"
+                                                          value="BlackBerry" id="osCheck4" <%= osD.filter(function(item){ return item == 'BlackBerry' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck4">BlackBerry</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os"
+                                                          value="Symbian" id="osCheck5" <%= osD.filter(function(item){ return item == 'Symbian' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck5">Symbian</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os"
+                                                          value="Windows" id="osCheck6" <%= osD.filter(function(item){ return item == 'Windows' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="osCheck6">Windows</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                       class="form-check-input check-in d-block"
+                                                       type="checkbox" name="os" value="MacOS"
+                                                       id="osCheck7" <%= osD.filter(function(item){ return item == 'Linux' }).length ? 'checked': '' %>
+                                                       <label class="form-check-label"
+                                                          for="osCheck7">MacOS</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="os" value="Linux"
+                                                          id="osCheck8" 
+                                                          <%= osD.filter(function(item){ return item == 'Linux' }).length ? 'checked': '' %>  >
+                                                       <label class="form-check-label"
+                                                          for="osCheck8">Linux</label>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- ===================================== form --4 End =======================================-->
+       <section>
+          <div class="row">
+             <div class="col-md-12">
+                <div id="add-campaigns">
+                   <div class="hero border-dark border-1 rounded mb-5">
+                      <div class="py-5 px-4 text-center">
+                         <div class="row">
+                            <div class="col-md-12 text-center">
+                               <h6 class="text-color font-weight-bold">PLACEMENT</h6>
+                            </div>
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Exchange <span class="text-gray-600">
+                                     (This is
+                                     the
+                                     currently available Exchange's you can get
+                                     your sources
+                                     from.).</span>
+                                     </label>
+                                     <div class="form-check">
+                                        <input class="form-check-input check-in d-block" type="checkbox"
+                                           id="exc1" name="exchange" value="tjx" <%= campData.exchange_format == 'tjx' ? 'checked' : '' %> >
+                                        <label class="form-check-label" for="exc1">TJX</label>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Position <span class="text-gray-600">
+                                     (Select
+                                     the
+                                     position(s) where you want your ads to
+                                     show).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-3">
+                                           <select class="form-control" id="exampleFormControlSelect40"
+                                              name="ad_position">
+                                              <option  value="all">All</option>
+                                              <option value="above_the_fold">Above the fold</option>
+                                              <option value="below_the_fold">Below the fold</option>
+                                              <option value="footer">Footer</option>
+                                              <option value="full_screen">Full Screen</option>
+                                              <option value="header">Header</option>
+                                              <option value="sidebar">Sidebar</option>
+                                              <option value="unknown">Unknown</option>
+                                           </select>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Browser Targeting <span
+                                        class="text-gray-600">
+                                     Target
+                                     all browsers or exclude Chrome ( Advertisers
+                                     with creatives that
+                                     do not
+                                     comply with Google's Abusive Ad Experience
+                                     rules should exclude
+                                     Chrome).</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="browserTarget" value="all"
+                                                 id="off-8" <%= campData.browser_targeting == '1' ? 'checked' : '' %> />
+                                              <label class="lable active" for="off-8">All
+                                              Browsers</label>
+                                              <input class="" type="radio" name="browserTarget"
+                                                 value="all-with-chrome" id="on-9" <%= campData.browser_targeting == '2' ? 'checked' : '' %> />
+                                              <label class="lable" for="on-9">All But
+                                              Chrome</label>
+                                              <input class="" type="radio" name="browserTarget"
+                                                 value="advanced-targeting" id="on-10" <%= campData.browser_targeting == '3' ? 'checked' : '' %> />
+                                              <label class="lable" for="on-10">Advanced
+                                              Trageting</label>
+                                              <div class="content off-8">
+                                              </div>
+                                              <div class="content off-9">
+                                              </div>
+                                              <div class="content on-10">
+                                                 <% let brosD = JSON.parse(campData.browser); %>
+                                                 <div class="text-left">
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="chrome" id="broserCheck1"
+                                                          <%= brosD.filter(function(item){ return item == 'chrome' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck1">Chrome</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="edge" id="broserCheck2" 
+                                                          <%= brosD.filter(function(item){ return item == 'edge' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck2">Edge</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="firefox" id="broserCheck3" <%= brosD.filter(function(item){ return item == 'firefox' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck3">FireFox</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="internet-explorer"
+                                                          id="broserCheck4" <%= brosD.filter(function(item){ return item == 'internet-explorer' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck4">Internet
+                                                       Explorer</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="opera" id="broserCheck5" <%= brosD.filter(function(item){ return item == 'opera' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck5">Opera</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="safari" id="broserCheck6" <%= brosD.filter(function(item){ return item == 'safari' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck6">safari</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                       <input
+                                                          class="form-check-input check-in d-block"
+                                                          type="checkbox" name="browser"
+                                                          value="other" id="broserCheck7" <%= brosD.filter(function(item){ return item == 'other' }).length ? 'checked': '' %> >
+                                                       <label class="form-check-label"
+                                                          for="broserCheck7">Other</label>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Browser Language Targeting
+                                     <span class="text-gray-600">(Target or exclude a
+                                     browser language of
+                                     your
+                                     choice.)</span> </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="browserLanguageTarget"
+                                                 value="0" id="off-11"  data-toggle-target="languageTargetingWrapper"
+                                                 <%= campData.browser_language_targeting == '0' ? 'checked' : '' %> />
+                                              <label class="lable active" for="off-11">OFF</label>
+                                              <input class="" type="radio"
+                                                 name="browserLanguageTarget" value="1" id="on-11"
+                                                 data-toggle-target="languageTargetingWrapper"
+                                                 <%= campData.browser_language_targeting == '1' ? 'checked' : '' %> />
+                                              <label class="lable" for="on-11">ON</label>
+                                              <div class="content off-11">
+                                              </div>
+                                              <div class="content on-11 expandable <%= campData.browser_language_targeting == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="languageTargetingWrapper">
+                                                 <div class="row d-block">
+                                                 </div>
+                                                 <div class="row">
+                                                    <div class="col-md-4">
+                                                       <div class="form-group time-in mt-2">
+                                                          <label class="text-color">Selected
+                                                          Browser
+                                                          Languages</label>
+                                                          <% if(campData.browser_language_selected){ %>
+                                                          <div class="form-control">
+                                                             <%= campData.browser_language_selected %>
+                                                          </div>
+                                                          <% } %>                                                                           
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                         <div class="text-left">
+                            <div class="row mt-1">
+                               <div class="col-md-12">
+                                  <div class="form-group">
+                                     <label class="text-color">Mobile Connection
+                                     Targeting <span class="text-gray-600"> Target a
+                                     specific mobile
+                                     connection.</span>
+                                     </label>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                           <div class="radio-b ml-3">
+                                              <input type="radio" name="connectionTarget" value="0"
+                                                 id="off-12" checked="checked"
+                                                 data-toggle-target="connTargetingWrapper"
+                                                 <%= campData.connection_targeting == '0' ? 'checked' : '' %> />
+                                              <label class="lable active" for="off-12">OFF</label>
+                                              <input class="" type="radio" name="connectionTarget"
+                                                 value="1" id="on-12"
+                                                 data-toggle-target="connTargetingWrapper"
+                                                 <%= campData.connection_targeting == '1' ? 'checked' : '' %> />
+                                              <label class="lable" for="on-12">ON</label>
+                                              <div class="content off-12">
+                                              </div>
+                                              <div class="content on-12 expandable <%= campData.connection_targeting == '1' ? '' : 'd-none' %>"
+                                                 data-toggle="connTargetingWrapper">
+                                                 <div class="row d-block">
+                                                    <div class="col-md-3 radio-tab">
+                                                       <div class="btn-group btn-group-toggle"
+                                                          data-toggle="buttons">
+                                                          <label class="btn btn-secondary">
+                                                          <input type="radio"
+                                                             name="connection"
+                                                             value="wifi"
+                                                             id="option002"
+                                                             <%= campData.connection_type == 'wifi' ? 'checked' : '' %> >
+                                                          WiFi
+                                                          </label>
+                                                          <label class="btn btn-secondary">
+                                                          <input type="radio"
+                                                             name="connection"
+                                                             value="carrier"
+                                                             id="option003"
+                                                             <%= campData.connection_type == 'carrier' ? 'checked' : '' %> >
+                                                          Carrier
+                                                          </label>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <hr class="hr">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- ===================================== form --5 End =======================================-->
+    </section>
+ </div>
+ <!-- /.container-fluid -->
+ </div>
+ <!-- End of Main Content -->

@@ -1,0 +1,10 @@
+<%- include('layouts/header') -%>
+
+<%- include('layouts/navbar')%>
+
+    <% if (page) { %>        
+        <%- include('pages/'+page)%>
+    <% } %>
+
+
+<%- include('layouts/footer')%>

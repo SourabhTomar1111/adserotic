@@ -1,0 +1,22 @@
+<%- include('layouts/header') -%>
+<%- include('layouts/left-navbar') -%>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            
+
+            <%- include('layouts/top-navbar')%>
+
+            <% if (page) { %>
+                <%- include('pages/'+page)%>
+            <% } %>
+                            
+        </div>
+        <!-- Main Content -->
+    </div>
+    <!-- Content Wrapper -->
+
+<%- include('layouts/footer')%>

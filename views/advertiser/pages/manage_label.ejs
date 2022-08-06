@@ -1,0 +1,109 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+        <h1 class="h3 mb-0 text-white">Manage Labels</h1>
+        <P class="mt-2">A label is a keyword that is used to facilitate the organization and search for
+            your campaigns and banners.</P>
+    </div>
+
+    <!-- ===================================== form section start =====================================-->
+
+    <div id="new-lable">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class=" mt-4">
+                    <p>
+                        <a class="btn btn-outline-warning" data-toggle="collapse" href="#collapseExample-10"
+                            role="button" aria-expanded="false" aria-controls="collapseExample-10">
+                            <i class="fas fa-plus-circle"></i> New Label
+                        </a>
+                        <a class="btn ml-3" href="#" role="button">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </p>
+
+                    <div class="collapse" id="collapseExample-10">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="hero border-dark border-1 rounded mb-2">
+                                    <div class="py-5 px-4">
+
+                                        <div class="">
+                                            <p class="mb-4">Create New Label</p>
+                                        </div>
+
+
+                                        <form id="add-lbl-form">
+                                            <div class="form-group row">
+                                                <label for="inputEmail3" class="col-sm-1 col-form-label text-white">Name
+                                                    :</label>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="title" class="form-control" id="lbl-title">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-3">
+                                                <div class="col-md-12 d-flex justify-content-center">
+                                                    <button type="button" id="add-lbl-btn" class="btn btn-outline-warning m-2" disabled>Add
+                                                        Label</button>
+                                                    <button type="button" id="cancel-lbl-btn" class="btn-purple m-2">Cancel</button>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ========================= -->
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===================================== form section End =======================================-->
+
+    <!-- ===================================== table section  =======================================-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="hero">
+               <div class="hero border-dark border-1 rounded">
+                   <div class="py-5 px-5 ">
+                 <div class="table-responsive">
+                    <table class="table" id="myTable">
+                        <thead>
+                          <tr class="table-primary-color">
+                            <th scope="col" >ID</th>
+                            <th scope="col">Label</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+    
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+     </div>
+
+
+
+
+</div>
+<!-- /.container-fluid -->

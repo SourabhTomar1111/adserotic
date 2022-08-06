@@ -1,0 +1,206 @@
+<!-- <div>
+    <h1>Website Information</h1>
+
+<form method="post" action="/website">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="refral-pro">
+        <div class="hero border-dark border-1 rounded mb-5">
+          <div class="py-5 px-4">
+        
+            <div class="row mb-2">
+              <label for = "name">Your Link :</label>
+              <div class="col-md-10">
+                Add Url of Website
+                <div class="row mt-2">
+                  <div class="col-10">
+                    <input type="read" class="form-control" id="link" />
+                  </div>
+                  <div class="col-2">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Copy To Clipboard"
+                      style="border-radius: 2px"
+                    >
+                      <i class="fas fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <br /><br /><br /><br />
+            
+            </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Page Description :</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            
+            
+           
+            <label for = "name">category :</label>
+            <select class = "form-control">
+              <option value="" selected>category</option>
+              <option value="google">Google</option>
+              <option value="facebook">Facebook</option>
+              <option value="instagram">Instagram</option>
+            </select>
+
+              <div class = "form-group">
+                 <label for = "name">state choice :</label>
+                 <select class = "form-control">
+                  <option value="Australia">Australian</option>
+                  <option value="Canada">Canadian</option>
+                  <option value="England">English</option>
+                  <option value="China">Chinese</option>
+                 </select>
+              </div>
+         
+              
+                <div class="form-group">
+                  <label for = "name">state choice :</label>
+                  <select class = "form-control">
+                    <option value="" selected>Currency</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </div>
+              
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-primary">submit</button>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div> -->
+<div class="container-fluid addedit">
+  <%- include('../layouts/alerts') %>
+
+      <!-- Page Heading -->
+      <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+          <h1 class="h3 mb-0 text-white">Website</h1>
+          <P class="mt-2">Website</P>
+          <!-- <P class="mt-2 mb-0 text-white">Step 1. Create a Campaigns</P> -->
+          <!-- <P class="mt-2">Select your page Url,  settings, schedule, target audience and placement.</P> -->
+      </div>
+
+      <!-- ============================== form section start =============================-->
+      <section class="frm-wrapper">
+          <div class="row">
+              <div class="col-md-12">
+                  <div id="add-page">
+                      <div class="hero border-dark border-1 rounded mb-5">
+                          <div class="px-4 text-center">
+                              <div class="text-left">
+                                  <form class="text-left" action="" method="post">
+                                      <div class="row mt-4 ">
+                                          <div class="col-md-12">
+                                              <div class="form-group ">
+                                                  <label for="addurl" class="text-color">Addurl <span class="text-gray-600">
+                                                          (Add page URL for showing the ads on it.)</span></label>
+                                                  <input type="addurl" class="form-control" id="addurl" name="addurl">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row mt-4 ">
+                                          <div class="col-md-12">
+                                              <div class="form-group ">
+                                                  <label for="pagedescription" class="text-color">Pagedescription <span
+                                                          class="text-gray-600"> (Add Page description for helping in
+                                                          add
+                                                          ads on it.)</span></label>
+                                                  <textarea class="form-control" id="pagedescription" name="pagedescription"
+                                                      rows="8"></textarea>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row mt-1">
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label for="category" class="text-color">Category
+                                                      <span class="text-gray-600"> (Select the category of the
+                                                          ads.)</span> </label>
+
+                                                  <div class="row">
+                                                      <div class="col-md-12">
+                                                          <select class="form-control" id="category" name="category">
+                                                              <option disabled selected hidden>Select Category
+                                                              </option>
+                                                              <option value="" selected>category</option>
+                                                              <option value="google">Google</option>
+                                                              <option value="facebook">Facebook</option>
+                                                              <option value="instagram">Instagram</option>
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row mt-1">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="statechoice" class="text-color">statechoice
+                                                    <span class="text-gray-600"> (select statechoice )</span>
+                                                </label>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <select class="form-control" id="statechoice" name="statechoice">
+                                                            <option disabled selected hidden>statechoice
+                                                            </option>
+                                                            <option value="Australia">Australian</option>
+                                                            <option value="Canada">Canadian</option>
+                                                            <option value="England">English</option>
+                                                            <option value="China">Chinese</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="row mt-1">
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label for="currency" class="text-color">currency
+                                                      <span class="text-gray-600"> (select Currency )</span>
+                                                  </label>
+
+                                                  <div class="row">
+                                                      <div class="col-md-12">
+                                                          <select class="form-control" id="currency" name="currency">
+                                                              <option disabled selected hidden>currency
+                                                              </option>
+                                                              <option value="" selected>Currency</option>
+                                                              <option value="EUR">EUR</option>
+                                                              <option value="USD">USD</option>
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                                  
+                                              </div>
+                                          </div>
+                                      </div>
+                                      
+                                      <div class="row mt-5">
+                                          <div class="col-md-12 d-flex justify-content-center">
+                                              <button type="submit" class="btn btn-success m-2">Create</button>
+                                              <button type="button" class="btn-purple m-2">Cancel</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+</div>

@@ -1,0 +1,33 @@
+<!-- <% if(messages.info){  %>
+    <div class="alert alert-success" role="alert">
+        <%= messages.info %>
+      </div>
+<% } %>
+<% if(messages.error){  %>
+    <div class="alert alert-error" role="alert">
+        <%= messages.error %>
+      </div>
+<% } %>
+<% if(messages.warning){  %>
+    <div class="alert alert-warning" role="alert">
+        <%= messages.warning %>
+      </div>
+<% } %> -->
+<% if(messages.info){ %>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <%= messages.info %>
+</div>
+<% } %> <% if(messages.error){ %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <%= messages.error %>
+</div>
+
+<% } %> <% if(messages.warning){ %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <%= messages.warning %>
+</div>
+<% } %> <% if(messages.success){ %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= messages.info %>
+</div>
+<% } %>

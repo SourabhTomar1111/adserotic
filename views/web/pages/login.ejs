@@ -1,0 +1,20 @@
+<section class="login">
+    <div class="container">
+        <div id="login_page" class="login_page pt-5">
+            <%- include('../layouts/alerts') %>
+                    
+            <div class="form">
+                <div class="for_pass-title pb-2">
+                    <h2 class="mb-4">login</h2>
+                    
+                </div>
+                <form class="for_pass_form" action="auth/login" method="post">
+                    <input type="text" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <a class="d-flex justify-content-end " href="/forgotpassword">forgot password</a>
+                    <button class="Conform_pass mt-4">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

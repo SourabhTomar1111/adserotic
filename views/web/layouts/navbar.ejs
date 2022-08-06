@@ -1,0 +1,37 @@
+<!-- ================================= Header Start ================================ -->
+
+<header id="header" class="d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center">  
+
+      <h1 class="logo me-auto"><a href="/">AdsErotic</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">HOME</a></li>
+          <li><a class="nav-link scrollto" href="publishers">PUBLISHERS</a></li>
+          <li><a class="nav-link scrollto" href="advertisers">ADVERTISERS</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#">BLOG</a></li> -->
+          <li><a class="nav-link scrollto " href="FAQ">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="contact">CONTACT US</a></li>          
+          <% if(session.loggedIn){ %>
+            
+            <% if(session.user.user_role == 2){ %>
+              <li><a class="nav-link scrollto" href="/publisher/dashboard">Dashboard</a></li>          
+            <% } %>
+            <% if(session.user.user_role == 3){ %>
+              <li><a class="nav-link scrollto" href="/advertiser/dashboard">Dashboard</a></li>          
+            <% } %>
+
+              <li><a class="nav-link scrollto " href="logout">LOGOUT</a></li>
+          <% }else{ %>
+          <li><a class="nav-link scrollto " href="login">LOG IN</a></li>
+          <li><a class="nav-link scrollto regitser_btn" href="register">REGISTER</a></li>
+          <% } %>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- ======= language btn ===== -->
+    </div>
+  </header>
+
+<!-- ================================= Header End ================================ -->

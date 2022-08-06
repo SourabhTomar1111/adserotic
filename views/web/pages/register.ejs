@@ -1,0 +1,198 @@
+<div id="regist-page" class="login_page pt-5">
+    <div class="form">
+        
+        <div class="regi-title pb-2">
+            <h2>Registration</h2>            
+        </div>
+        <%- include('../layouts/alerts') %>
+        
+        <div class="regi_btn d-flex justify-content-center mb-3">
+            <ul class="nav nav-tabs " id="myTab" role="tablist">
+                <li class="nav-item item-1" role="presentation ">
+                    <button class="nav-link active" id="publisher-tab" data-bs-toggle="tab" data-bs-target="#publisher"
+                        type="button" role="tab" aria-controls="publisher" aria-selected="true">Publisher</button>
+                </li>
+                <li class="nav-item item-2" role="presentation">
+                    <button class="nav-link " id="advertiser-tab" data-bs-toggle="tab" data-bs-target="#advertiser"
+                        type="button" role="tab" aria-controls="advertiser" aria-selected="false">Advertiser</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="publisher" role="tabpanel" aria-labelledby="publisher-tab">
+                <form class="regist_form" id="frm-pub" action="/auth/publisher" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="company_name" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="password" name="p_password" placeholder="Password" autocomplete="false" >
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" name="p_c_password" placeholder="Confirm password" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="firstname" placeholder="First name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="lastname" placeholder="Last name">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="c_email" placeholder="Confirm email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="skype" placeholder="Skype">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <select name="nationality" class="form-select nation_select">
+                                    <option value="" selected>Nationality</option>
+                                    <option value="Australia">Australian</option>
+                                    <option value="Canada">Canadian</option>
+                                    <option value="England">English</option>
+                                    <option value="China">Chinese</option>
+                                    <option value="France">French</option>
+                                    <option value="Germany">German</option>
+                                    <option value="India">Indian</option>
+                                    <option value="Japan">Japanese</option>
+                                    <option value="Nigeria">Nigerian</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portuguese</option>
+                                    <option value="Russia">Russian</option>
+                                    <option value="Spain">Spanish</option>
+                                    <option value="United States">American</option>
+                                    <option value="Wales">Welsh</option>
+                                    <option value="Zimbabwe	">Zimbabwean</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="country" placeholder="Country">
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="">
+                                <select name="currency" class="form-select nation_select">
+                                    <option value="" selected>Currency</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="registar_btn text-center">
+                        <button class="guest_login " id="btn-pub-reg">Registar</button>
+
+                    </div>
+
+                </form>
+            </div>
+            <!-- ==== ============= individual =================== -->
+            <div class="tab-pane fade" id="advertiser" role="tabpanel" aria-labelledby="advertiser-tab">
+                <form class="regist_form" id="frm-adv" action="/auth/advertiser" method="post"> 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="company_name" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="password" name="a_password" placeholder="Password" autocomplete="false">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" name="a_c_password" placeholder="Confirm password" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="firstname" placeholder="First name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="lastname" placeholder="Last name">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="c_email" placeholder="Confirm email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="skype" placeholder="Skype">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <select name="nationality" class="form-select nation_select">
+                                    <option value="" selected>Nationality</option>
+                                    <option value="Australia">Australian</option>
+                                    <option value="Canada">Canadian</option>
+                                    <option value="England">English</option>
+                                    <option value="China">Chinese</option>
+                                    <option value="France">French</option>
+                                    <option value="Germany">German</option>
+                                    <option value="India">Indian</option>
+                                    <option value="Japan">Japanese</option>
+                                    <option value="Nigeria">Nigerian</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portuguese</option>
+                                    <option value="Russia">Russian</option>
+                                    <option value="Spain">Spanish</option>
+                                    <option value="(The) United States">American</option>
+                                    <option value="Wales">Welsh</option>
+                                    <option value="Zimbabwe	">Zimbabwean</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="country" placeholder="Country">
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="">
+                                <select name="currency" class="form-select nation_select">
+                                    <option value="" selected>Currency</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="registar_btn text-center">
+                        <button class="guest_login" id="btn-adv-reg">Registar</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+/>
+<style>
+  div {
+    position: relative;
+  }
+  .data {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+<% if(widget.length){ %> 
+<div id="remove">
+  <i title="ads by techdiligents"
+    style="
+      position: absolute;
+      left: 217px;
+      color: rgb(11, 214, 237);
+      background-color: rgb(114, 114, 114);
+      z-index: 100;
+    "
+    class="bi bi-info-circle"
+  ></i>
+  <i  
+    style="
+      position: absolute;
+      left: 234px;
+      color: rgb(11, 214, 237);
+      background-color: rgb(114, 114, 114);
+      z-index: 100;
+    "
+    class="bi bi-x-lg"
+    onclick="removeData()"
+  ></i>
+
+  <% if(widget.length){ %> <% widget.forEach(function(vis){ %>
+
+  <a href="/public/static_banner/<%= vis.name %>" target="_blank">
+    <div width="250" height="250" class="data">
+      <% if(vis.type === 1 || vis.type === 2){ %>
+      <img
+        width="250"
+        height="250"
+        src="/public/static_banner/<%= vis.name %>"
+      />
+      <%} else { %>
+      <video width="250" height="250" loop="true" autoplay="autoplay" muted>
+        <source src="/public/video_banner/<%= vis.name %>" />
+      </video>
+      <% } %>
+    </div>
+    <div class="advertiser" value="<%= vis.advertiser_user_id %>"></div>
+    <div class="publisher" value=" <%= vis.publisher_User_Id %>"></div>
+    <div class="media" value="<%= vis.media_id %>"></div>
+    <div class="image" value="<%= vis.name %>"></div>
+    <div class="page" value="<%= vis.publisher_page_id%>"></div>
+  </a>
+
+  <% }); %> <% } %>
+</div>
+<% } else { %>
+<div></div>
+  <% } %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/public/javascripts/script.js"></script>
+
+<!-- <script>
+  var advertiserData = [];
+var publisherData = [];
+var mediaData = [];
+var pageData = [];
+const images = document.querySelectorAll(".data");
+const advertiser = document.querySelectorAll(".advertiser");
+const publisher = document.querySelectorAll(".publisher");
+const media = document.querySelectorAll(".media");
+console.log(images)
+const page = document.querySelectorAll(".page");
+
+advertiser.forEach((adv) => {
+  advertiserData = adv.getAttribute("value");
+});
+publisher.forEach((pub) => {
+  publisherData = pub.getAttribute("value");
+});
+media.forEach((med) => {
+  mediaData.push(med.getAttribute("value"));
+  console.log(mediaData)
+});
+
+page.forEach((pag) => {
+  pageData = pag.getAttribute("value");
+});
+
+//=============================== Show widgets =========================================
+let i = 0;
+let intervalTime = 1000;
+const inter = async () => {
+  images.forEach((img, i) => {
+    img.style.display = "none";
+  });
+  if (i == images.length) {
+    i = 0;
+    update();
+  }
+  images[i].style.display = "block";
+  i++;
+};
+
+
+//=================================== Stop Interval and remove widgets =======================
+function removeData() {
+  clearInterval(intervalID);
+  var remove_div = document.getElementById("remove");
+  remove_div.remove();
+}
+const intervalID = setInterval(inter, intervalTime);
+
+
+//=================================== update count ========================================
+const update = () => {
+  $.ajax({
+    type: "POST",
+    url: "/widgets/count",
+    dataType: "json",
+    data: {
+      advertiserData,
+      publisherData,
+      mediaData,
+      pageData,
+    },
+  });
+};
+</script> -->
+

@@ -1,0 +1,2424 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class=" align-items-center justify-content-between mb-4 pb-3 border-bottom border-dark">
+        <h1 class="h3 mb-0 text-white">Media Library</h1>
+        <P class="mt-2">Media Library makes it easy to upload, store, and manage all your ad creatives
+            in a single place. You can upload a maximum of 100 creatives at once.</P>
+    </div>
+
+    <!-- ===================================== form section start =====================================-->
+
+    <div class="row">
+        <div class="col-md-12" id="media-tab1">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="static-tab" data-toggle="tab" href="#static" role="tab"
+                        aria-controls="static" aria-selected="true">Static Banner</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video"
+                        aria-selected="false">Video Banner</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="overlay-tab" data-toggle="tab" href="#overlay" role="tab"
+                        aria-controls="overlay" aria-selected="false">Overlay Logo</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="stream-tab" data-toggle="tab" href="#stream" role="tab"
+                        aria-controls="stream" aria-selected="false">In-Stream Video</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab"
+                        aria-controls="rejected" aria-selected="false">Rejected</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <!-- ======================================= 1st Tab ======================================== -->
+                <div class="tab-pane fade show active" id="static" role="tabpanel" aria-labelledby="static-tab">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="hero border-dark border-1 rounded mb-5">
+
+                                <div class="py-5 px-4">
+                                    <!-- ================ content ================ -->
+                                    <div class="border-bottom border-dark">
+                                        <p class="mb-4">Static banner ads use static .jpg/.png or
+                                            animated .gif creatives that have a maximum size of
+                                            300KB.<br> View all your approved and pending Static Banner
+                                            creatives here. If you can't find an uploaded creative,
+                                            please refer to the Rejected tab. Note: Approval takes
+                                            upwards of 3 hours.</p>
+                                    </div>
+                                    <!-- ================ content ================ -->
+
+                                    <!-- ================== Filter start================ -->
+                                    <div class="border-bottom border-dark mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-1" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-1">
+                                                Filters <i class="fas fa-long-arrow-alt-right"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-1">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="static-filter">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4 text-center">
+                                                                <!-- ================ form ================ -->
+
+                                                                <form class="text-left">
+                                                                    <!-- ================ 1st row ================ -->
+                                                                    <div class="row ">
+
+                                                                        <div class="col-md-6">
+
+                                                                            <div class="row">
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_5"
+                                                                                            class="text-color">(Stats
+                                                                                            Date Range)
+                                                                                            Start
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="startdate5"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_5"
+                                                                                            class="text-color">End
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="enddate5"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect26"
+                                                                                    class="text-color">Creative
+                                                                                    ID/Name</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect26">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Creatives
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect27"
+                                                                                    class="text-color">Campaigns</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect27">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Campaigns
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 2nd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect28"
+                                                                                    class="text-color">Source
+                                                                                    Name/ID</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect28">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sources
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect29"
+                                                                                    class="text-color">Site</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect29">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sites
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect30"
+                                                                                    class="text-color">File
+                                                                                    Type</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect30">
+                                                                                    <option disabled selected hidden>
+                                                                                        All File Types
+                                                                                    </option>
+                                                                                    <option>.png
+                                                                                    </option>
+                                                                                    <option>.jpg
+                                                                                    </option>
+                                                                                    <option>.gif
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect31"
+                                                                                    class="text-color">Dimensions</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect31">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Dimensions
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 3rd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Duration</label>
+                                                                                <select id="disabledSelect"
+                                                                                    class="form-control" disabled>
+                                                                                    <option disabled selected hidden
+                                                                                        class="text-dark">
+                                                                                        All Duration
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect32"
+                                                                                    class="text-color">Countries</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect32">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Countries
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect33"
+                                                                                    class="text-color">Labels</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect33">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Labels
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect34"
+                                                                                    class="text-color">Target
+                                                                                    Group</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect34">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Target
+                                                                                        Groups</option>
+                                                                                    <option>Straight
+                                                                                    </option>
+                                                                                    <option>Gay</option>
+                                                                                    <option>All</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <!-- ================ 4th row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect35"
+                                                                                    class="text-color">Review
+                                                                                    Status</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect35">
+                                                                                    <option disabled selected hidden>
+                                                                                        All</option>
+                                                                                    <option>Approved
+                                                                                    </option>
+                                                                                    <option>Pending
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect36"
+                                                                                    class="text-color">Animation
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect36">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Animation
+                                                                                        Flags</option>
+                                                                                    <option>No Animation
+                                                                                    </option>
+                                                                                    <option>2 Second
+                                                                                    </option>
+                                                                                    <option>Full
+                                                                                        Animation
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect37"
+                                                                                    class="text-color">Google
+                                                                                    Standard
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect37">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Flag
+                                                                                    </option>
+                                                                                    <option>Passed
+                                                                                    </option>
+                                                                                    <option>Failed
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <div class="row mt-5">
+                                                                        <div
+                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-warning m-2">Apply
+                                                                                Filters</button>
+                                                                            <button type="button"
+                                                                                class="btn-purple m-2">Clear
+                                                                                Filters</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                                <!-- ================ form ================ -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- ================== Filter end================ -->
+                                    <div class=" mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-2" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-2">
+                                                Upload New Creatives
+                                            </a>
+                                            <a class="btn ml-3" href="#" role="button">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-2">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="Upload_New" class="static_banner"
+                                                        data-type="static_banner">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4">
+
+                                                                <div class="">
+                                                                    <p class="mb-4">Only Static
+                                                                        creatives can be uploaded here.
+                                                                        If you want to upload a video,
+                                                                        in-stream video or overlay logo
+                                                                        you will have to upload them
+                                                                        from their tabs. <span
+                                                                            class="font-weight-bold ">Maximum
+                                                                            file size - 300KB. |
+                                                                            Accepted formats - JPG, GIF,
+                                                                            PNG.</span></p>
+                                                                    <!-- <p class="mt-3 text-white">Maximum file size - 300KB.<br>Accepted formats - JPG, GIF, PNG.</p> -->
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div id="sb-drag-holder"
+                                                                        class="col-12 sb-drag-holder"
+                                                                        data-type="static_banner">
+
+                                                                        <form id="sb-form"
+                                                                            method="post" enctype="multipart/form-data"
+                                                                            data-upload-url="/media/static_banner"
+                                                                            data-file-ext=".jpeg, .jpg, .png, .gif"
+                                                                            class="border rounded d-flex justify-content-center">
+                                                                            <div class="form-group mt-5 mb-5 ">
+                                                                                <label for="sb-inputfile"
+                                                                                    id="sb-label">Click or Drag and Drop
+                                                                                    Files Here to Upload</label>
+                                                                                <input type="file" name="sb-inputfile"
+                                                                                    class="form-control-file sb-inputfile d-none"
+                                                                                    id="sb-inputfile" multiple>
+                                                                                <progress id="sb-progress-bar"
+                                                                                    class="d-flex text-center" value="0"
+                                                                                    max="100"></progress>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                    <div id="sb-gallery" class="my-2 mx-2"></div>
+                                                                </div>
+                                                                <!-- <div class="row">
+                                                                    <div
+                                                                        class="col-12 sb-preview-holder my-2 text-center">
+                                                                        
+                                                                    </div>
+                                                                </div> -->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- ========================= -->
+
+                                </div>
+
+
+                                <!-- ============================================================ -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" border-dark border-1 rounded">
+                                            <div class="py-5 px-5 ">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr class="table-primary-color">
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Action</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ============================================================ -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================= 2nd Tab ======================================== -->
+                <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="hero border-dark border-1 rounded mb-5">
+
+                                <div class="py-5 px-4">
+                                    <!-- ================ content ================ -->
+                                    <div class="border-bottom border-dark">
+                                        <p class="mb-4">Video banner ads use video creatives that have a
+                                            maximum size of 1MB. Usually, these banners play without
+                                            sound.<br>
+
+                                            View all your approved and pending Video Banner creatives
+                                            here. If you can't find an uploaded creative, please refer
+                                            to the Rejected tab. Note: Approval takes upwards of 3
+                                            hours.</p>
+                                    </div>
+                                    <!-- ================ content ================ -->
+
+                                    <!-- ================== Filter start================ -->
+                                    <div class="border-bottom border-dark mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-3" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-3">
+                                                Filters <i class="fas fa-long-arrow-alt-right"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-3">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="static-filter">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4 text-center">
+                                                                <!-- ================ form ================ -->
+
+                                                                <form class="text-left">
+                                                                    <!-- ================ 1st row ================ -->
+                                                                    <div class="row ">
+
+                                                                        <div class="col-md-6">
+
+                                                                            <div class="row">
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_6"
+                                                                                            class="text-color">(Stats
+                                                                                            Date Range)
+                                                                                            Start
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="startdate6"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_6"
+                                                                                            class="text-color">End
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="enddate6"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect38"
+                                                                                    class="text-color">Creative
+                                                                                    ID/Name</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect38">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Creatives
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect39"
+                                                                                    class="text-color">Campaigns</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect39">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Campaigns
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 2nd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect40"
+                                                                                    class="text-color">Source
+                                                                                    Name/ID</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect40">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sources
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect41"
+                                                                                    class="text-color">Site</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect41">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sites
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group ">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">File
+                                                                                    Type</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All File Types
+                                                                                    </option>
+                                                                                    <option>.png
+                                                                                    </option>
+                                                                                    <option>.jpg
+                                                                                    </option>
+                                                                                    <option>.gif
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect42"
+                                                                                    class="text-color">Dimensions</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect42">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Dimensions
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 3rd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label for="exampleFormControlSelect43"
+                                                                                    class="text-color">Duration</label>
+                                                                                <select id="exampleFormControlSelect43"
+                                                                                    class="form-control">
+                                                                                    <option disabled selected hidden
+                                                                                        class="text-dark">
+                                                                                        All Duration
+                                                                                    </option>
+                                                                                    <option>5-10 Seconds
+                                                                                    </option>
+                                                                                    <option>10-15
+                                                                                        Seconds</option>
+                                                                                    <option>15-20
+                                                                                        Seconds</option>
+                                                                                    <option>20-25
+                                                                                        Seconds</option>
+                                                                                    <option>25-30
+                                                                                        Seconds</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect44"
+                                                                                    class="text-color">Countries</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect44">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Countries
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect45"
+                                                                                    class="text-color">Labels</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect45">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Labels
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect46"
+                                                                                    class="text-color">Target
+                                                                                    Group</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect46">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Target
+                                                                                        Groups</option>
+                                                                                    <option>Straight
+                                                                                    </option>
+                                                                                    <option>Gay</option>
+                                                                                    <option>All</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <!-- ================ 4th row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect47"
+                                                                                    class="text-color">Review
+                                                                                    Status</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect47">
+                                                                                    <option disabled selected hidden>
+                                                                                        All</option>
+                                                                                    <option>Approved
+                                                                                    </option>
+                                                                                    <option>Pending
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Animation
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Animation
+                                                                                        Flags</option>
+                                                                                    <option>No Animation
+                                                                                    </option>
+                                                                                    <option>2 Second
+                                                                                    </option>
+                                                                                    <option>Full
+                                                                                        Animation
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect48"
+                                                                                    class="text-color">Google
+                                                                                    Standard
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect48">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Flag
+                                                                                    </option>
+                                                                                    <option>Passed
+                                                                                    </option>
+                                                                                    <option>Failed
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <div class="row mt-5">
+                                                                        <div
+                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-warning m-2">Apply
+                                                                                Filters</button>
+                                                                            <button type="button"
+                                                                                class="btn-purple m-2">Clear
+                                                                                Filters</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                                <!-- ================ form ================ -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- ================== Filter end================ -->
+                                    <div class=" mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-4" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-4">
+                                                Upload New Creatives
+                                            </a>
+                                            <a class="btn ml-3" href="#" role="button">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-4">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="Upload_New" class="video_banner">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4">
+
+                                                                <div class="">
+                                                                    <p class="mb-4">Only Videos can be
+                                                                        uploaded here. If you want to
+                                                                        upload a static, in-stream video
+                                                                        or overlay logo you will have to
+                                                                        upload them from their
+                                                                        tabs.<span class="font-weight-bold ">Maximum
+                                                                            file size - 1MB. | Accepted
+                                                                            formats - MPEG/MPG, MP4,
+                                                                            AVI. | Please note : the
+                                                                            maximum file size for
+                                                                            desktop video banners is
+                                                                            1MB, and the
+                                                                            maximum file size for mobile
+                                                                            video banners is
+                                                                            420KB</span></p>
+                                                                    <!-- <p class="mt-3 text-white">Maximum file size - 300KB.<br>Accepted formats - JPG, GIF, PNG.</p> -->
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div id="vb-drag-holder"
+                                                                        class="col-12 video-banner-drag-holder" data-type="video_banner">
+
+                                                                        <form id="vb-form"
+                                                                            class="border rounded d-flex justify-content-center"
+                                                                            data-upload-url="/media/video_banner"
+                                                                            data-file-ext=".mp4, .mpg, .mpeg, .avi"
+                                                                            data-max-file-size-mb="1">
+                                                                            <div class="form-group mt-5 mb-5 ">
+                                                                                <label for="vb-inputfile">Click or Drag
+                                                                                    and Drop Files Here to
+                                                                                    Upload</label>
+                                                                                <input type="file"
+                                                                                    class="form-control-file d-none"
+                                                                                    id="vb-inputfile" multiple> 
+                                                                                <progress id="vb-progress-bar"
+                                                                                    class="d-flex text-center" value="0"
+                                                                                    max="100"></progress>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                    <div id="vb-gallery"  class="my-2 mx-1"></div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- ========================= -->
+
+                                </div>
+
+                                <!-- ============================================================ -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" border-dark border-1 rounded">
+                                            <div class="py-5 px-5 ">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr class="table-primary-color">
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Action</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================= 3rd Tab ======================================== -->
+                <div class="tab-pane fade" id="overlay" role="tabpanel" aria-labelledby="overlay-tab">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="hero border-dark border-1 rounded mb-5">
+
+                                <div class="py-5 px-4">
+                                    <!-- ================ content ================ -->
+                                    <div class="border-bottom border-dark">
+                                        <p class="mb-4"> Overlay Logo is an image that can be added on
+                                            top of Video banner ads.<br>
+
+                                            View all your approved and pending overlay logo creatives
+                                            here. If you can't find an uploaded creative, please refer
+                                            to the Rejected tab. Note: Approval takes upwards of 3
+                                            hours.</p>
+                                    </div>
+                                    <!-- ================ content ================ -->
+
+                                    <!-- ================== Filter start================ -->
+                                    <div class="border-bottom border-dark mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-5" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-5">
+                                                Filters <i class="fas fa-long-arrow-alt-right"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-5">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="static-filter">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4 text-center">
+                                                                <!-- ================ form ================ -->
+
+                                                                <form class="text-left">
+                                                                    <!-- ================ 1st row ================ -->
+                                                                    <div class="row ">
+
+                                                                        <div class="col-md-6">
+
+                                                                            <div class="row">
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_7"
+                                                                                            class="text-color">(Stats
+                                                                                            Date Range)
+                                                                                            Start
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="startdate7"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_7"
+                                                                                            class="text-color">End
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="enddate7"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect49"
+                                                                                    class="text-color">Creative
+                                                                                    ID/Name</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect49">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Creatives
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect50"
+                                                                                    class="text-color">Campaigns</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect50">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Campaigns
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 2nd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect51"
+                                                                                    class="text-color">Source
+                                                                                    Name/ID</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect51">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sources
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect52"
+                                                                                    class="text-color">Site</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect52">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sites
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group ">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">File
+                                                                                    Type</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All File Types
+                                                                                    </option>
+                                                                                    <option>.png
+                                                                                    </option>
+                                                                                    <option>.jpg
+                                                                                    </option>
+                                                                                    <option>.gif
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect53"
+                                                                                    class="text-color">Dimensions</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect53">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Dimensions
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 3rd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Duration</label>
+                                                                                <select id="disabledSelect"
+                                                                                    class="form-control" disabled>
+                                                                                    <option disabled selected hidden
+                                                                                        class="text-dark">
+                                                                                        All Duration
+                                                                                    </option>
+                                                                                    <option>5-10 Seconds
+                                                                                    </option>
+                                                                                    <option>10-15
+                                                                                        Seconds</option>
+                                                                                    <option>15-20
+                                                                                        Seconds</option>
+                                                                                    <option>20-25
+                                                                                        Seconds</option>
+                                                                                    <option>25-30
+                                                                                        Seconds</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect54"
+                                                                                    class="text-color">Countries</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect54">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Countries
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect55"
+                                                                                    class="text-color">Labels</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect55">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Labels
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect56"
+                                                                                    class="text-color">Target
+                                                                                    Group</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect56">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Target
+                                                                                        Groups</option>
+                                                                                    <option>Straight
+                                                                                    </option>
+                                                                                    <option>Gay</option>
+                                                                                    <option>All</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <!-- ================ 4th row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect57"
+                                                                                    class="text-color">Review
+                                                                                    Status</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect57">
+                                                                                    <option disabled selected hidden>
+                                                                                        All</option>
+                                                                                    <option>Approved
+                                                                                    </option>
+                                                                                    <option>Pending
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Animation
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Animation
+                                                                                        Flags</option>
+                                                                                    <option>No Animation
+                                                                                    </option>
+                                                                                    <option>2 Second
+                                                                                    </option>
+                                                                                    <option>Full
+                                                                                        Animation
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect58"
+                                                                                    class="text-color">Google
+                                                                                    Standard
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect58">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Flag
+                                                                                    </option>
+                                                                                    <option>Passed
+                                                                                    </option>
+                                                                                    <option>Failed
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <div class="row mt-5">
+                                                                        <div
+                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-warning m-2">Apply
+                                                                                Filters</button>
+                                                                            <button type="button"
+                                                                                class="btn-purple m-2">Clear
+                                                                                Filters</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                                <!-- ================ form ================ -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- ================== Filter end================ -->
+                                    <div class=" mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-6" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-6">
+                                                Upload New Creatives
+                                            </a>
+                                            <a class="btn ml-3" href="#" role="button">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-6">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="Upload_New" class="overlay_logo"
+                                                        data-type=""="overlay_logo">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4">
+
+                                                                <div class="">
+                                                                    <p class="mb-4">Only Overlays Logos
+                                                                        can be uploaded here. If you
+                                                                        want to upload a static, video
+                                                                        or in-stream video you will have
+                                                                        to upload them from their
+                                                                        tabs.<span class="font-weight-bold ">Maximum
+                                                                            file size - 300KB. |
+                                                                            Accepted formats -
+                                                                            PNG.</span></p>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div id="ol-drag-holder"
+                                                                        class="col-12 overlay-log-drag-holder"
+                                                                        data-type="overlay_banner">
+
+                                                                        <form id="ol-form"
+                                                                            class="border rounded d-flex justify-content-center"
+                                                                            data-upload-url="/media/overlay_banner"
+                                                                            data-file-ext=".png"
+                                                                            >
+                                                                            <div class="form-group mt-5 mb-5 ">
+                                                                                <label id="ol-label"
+                                                                                    for="ol-inputfile">Click or Drag and
+                                                                                    Drop Files Here to Upload</label>
+                                                                                <input type="file"
+                                                                                    class="form-control-file d-none"
+                                                                                    id="ol-inputfile" multiple>
+                                                                                <progress id="ol-progress-bar"
+                                                                                    class="d-flex text-center" value="0"
+                                                                                    max="100"></progress>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                    <div id="ol-gallery" class="my-2 mx-1"></div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- ========================= -->
+
+                                </div>
+
+                                <!-- ============================================================ -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" border-dark border-1 rounded">
+                                            <div class="py-5 px-5 ">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr class="table-primary-color">
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Action</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================= 4th Tab ======================================== -->
+                <div class="tab-pane fade" id="stream" role="tabpanel" aria-labelledby="stream-tab">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="hero border-dark border-1 rounded mb-5">
+
+                                <div class="py-5 px-4">
+                                    <!-- ================ content ================ -->
+                                    <div class="border-bottom border-dark">
+                                        <p class="mb-4"> Video ads (Pre Rolls) play prior to the start
+                                            of the video that the user has selected to play. We
+                                            recommend your ads to be 15 to 30 seconds long and have a
+                                            maximum file size of 500MB.<br>
+
+                                            View all your approved and pending In-Stream Video creatives
+                                            here. If you can't find an uploaded creative, please refer
+                                            to the Rejected tab. Note: Approval takes upwards of 3
+                                            hours.</p>
+                                    </div>
+                                    <!-- ================ content ================ -->
+
+                                    <!-- ================== Filter start================ -->
+                                    <div class="border-bottom border-dark mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-7" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-7">
+                                                Filters <i class="fas fa-long-arrow-alt-right"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-7">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="static-filter">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4 text-center">
+
+                                                                <!-- ================ form ================ -->
+
+                                                                <form class="text-left">
+                                                                    <!-- ================ 1st row ================ -->
+                                                                    <div class="row ">
+
+                                                                        <div class="col-md-6">
+
+                                                                            <div class="row">
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_8"
+                                                                                            class="text-color">(Stats
+                                                                                            Date Range)
+                                                                                            Start
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="startdate8"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_8"
+                                                                                            class="text-color">End
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="enddate8"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect60"
+                                                                                    class="text-color">Creative
+                                                                                    ID/Name</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect60">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Creatives
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect61"
+                                                                                    class="text-color">Campaigns</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect61">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Campaigns
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 2nd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect62"
+                                                                                    class="text-color">Source
+                                                                                    Name/ID</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect62">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sources
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect63"
+                                                                                    class="text-color">Site</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect63">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sites
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group ">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">File
+                                                                                    Type</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All File Types
+                                                                                    </option>
+                                                                                    <option>.png
+                                                                                    </option>
+                                                                                    <option>.jpg
+                                                                                    </option>
+                                                                                    <option>.gif
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Dimensions</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Dimensions
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 3rd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label for="exampleFormControlSelect64"
+                                                                                    class="text-color">Duration</label>
+                                                                                <select id="exampleFormControlSelect64"
+                                                                                    class="form-control">
+                                                                                    <option disabled selected hidden
+                                                                                        class="text-dark">
+                                                                                        All Duration
+                                                                                    </option>
+                                                                                    <option>5-10 Seconds
+                                                                                    </option>
+                                                                                    <option>10-15
+                                                                                        Seconds</option>
+                                                                                    <option>15-20
+                                                                                        Seconds</option>
+                                                                                    <option>20-25
+                                                                                        Seconds</option>
+                                                                                    <option>25-30
+                                                                                        Seconds</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect65"
+                                                                                    class="text-color">Countries</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect65">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Countries
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect66"
+                                                                                    class="text-color">Labels</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect66">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Labels
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect67"
+                                                                                    class="text-color">Target
+                                                                                    Group</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect67">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Target
+                                                                                        Groups</option>
+                                                                                    <option>Straight
+                                                                                    </option>
+                                                                                    <option>Gay</option>
+                                                                                    <option>All</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <!-- ================ 4th row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect68"
+                                                                                    class="text-color">Review
+                                                                                    Status</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect68">
+                                                                                    <option disabled selected hidden>
+                                                                                        All</option>
+                                                                                    <option>Approved
+                                                                                    </option>
+                                                                                    <option>Pending
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Animation
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Animation
+                                                                                        Flags</option>
+                                                                                    <option>No Animation
+                                                                                    </option>
+                                                                                    <option>2 Second
+                                                                                    </option>
+                                                                                    <option>Full
+                                                                                        Animation
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect69"
+                                                                                    class="text-color">Google
+                                                                                    Standard
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect69">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Flag
+                                                                                    </option>
+                                                                                    <option>Passed
+                                                                                    </option>
+                                                                                    <option>Failed
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <div class="row mt-5">
+                                                                        <div
+                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-warning m-2">Apply
+                                                                                Filters</button>
+                                                                            <button type="button"
+                                                                                class="btn-purple m-2">Clear
+                                                                                Filters</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                                <!-- ================ form ================ -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- ================== Filter end================ -->
+                                    <div class=" mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-8" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-8">
+                                                Upload New Creatives
+                                            </a>
+                                            <a class="btn ml-3" href="#" role="button">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-8">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="Upload_New" class="in_stream_video"
+                                                        data-type="in_stream_video">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4">
+
+                                                                <div class="">
+                                                                    <p class="mb-4">Please note that you
+                                                                        can only upload one In-Stream
+                                                                        Video creative at a time. <span
+                                                                            class="font-weight-bold ">Minimum
+                                                                            video length - 5 seconds. |
+                                                                            Maximum video length - 30
+                                                                            seconds. | Maximum file size
+                                                                            - 500MB. | Accepted formats
+                                                                            - MPEG/MPG, MP4, MOV, AVI,
+                                                                            WMV. | Recommended
+                                                                            resolution - 1080p. | Aspect
+                                                                            ratio - 16:9.</span></p>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div id="sv-drag-holder"
+                                                                        class="col-12 stream-drag-holder"
+                                                                        data-type="video_stream">
+
+                                                                        <form id="sv-form"
+                                                                            class="border rounded d-flex justify-content-center"
+                                                                            data-upload-url="/media/video_stream"
+                                                                            data-file-ext=".mp4, .mpg, .mpeg, .avi, .mov, .wmv"
+                                                                            data-max-size-mb="500" max-file-no="1"
+                                                                            data-timeout-milliseconds="0"
+                                                                            data-parallel-upload-nos="1"
+                                                                            data-multiple="false">
+                                                                            <div class="form-group mt-5 mb-5 ">
+                                                                                <label id="sv-label"
+                                                                                    for="sv-inputfile">Click or Drag and
+                                                                                    Drop Files Here to Upload</label>
+                                                                                <input type="file"
+                                                                                    class="form-control-file d-none"
+                                                                                    id="sv-inputfile">
+                                                                                <progress id="sv-progress-bar"
+                                                                                    class="d-flex text-center" value="0"
+                                                                                    max="100"></progress>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                    <div id="sv-gallery" class="my-2 mx-1"></div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- ========================= -->
+
+                                </div>
+                                <!-- ============================================================ -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" border-dark border-1 rounded">
+                                            <div class="py-5 px-5 ">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr class="table-primary-color">
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Action</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ============================================================ -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================= 5th Tab ======================================== -->
+                <div class="tab-pane fade" id="rejected" role="tabpanel" aria-labelledby="rejected-tab">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="hero border-dark border-1 rounded mb-5">
+
+                                <div class="py-5 px-4">
+                                    <!-- ================ content ================ -->
+                                    <div class="border-bottom border-dark">
+                                        <p class="mb-4">All creatives must comply with our Animation and
+                                            Compliance Rules. Please review Rules & Regulations.</p>
+                                    </div>
+                                    <!-- ================ content ================ -->
+
+                                    <!-- ================== Filter start================ -->
+                                    <div class="border-bottom border-dark mt-4">
+                                        <p>
+                                            <a class="btn btn-outline-warning" data-toggle="collapse"
+                                                href="#collapseExample-9" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample-9">
+                                                Filters <i class="fas fa-long-arrow-alt-right"></i>
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapseExample-9">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div id="static-filter">
+                                                        <div class="hero border-dark border-1 rounded mb-2">
+                                                            <div class="py-5 px-4 text-center">
+
+                                                                <!-- ================ form ================ -->
+
+                                                                <form class="text-left">
+                                                                    <!-- ================ 1st row ================ -->
+                                                                    <div class="row ">
+
+                                                                        <div class="col-md-6">
+
+                                                                            <div class="row">
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_9"
+                                                                                            class="text-color">(Stats
+                                                                                            Date Range)
+                                                                                            Start
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="startdate9"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label
+                                                                                            for="exampleFormControlSelect_9"
+                                                                                            class="text-color">End
+                                                                                            date</label>
+                                                                                        <input class="form-control"
+                                                                                            type="date" id="enddate9"
+                                                                                            name="date">
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect71"
+                                                                                    class="text-color">Creative
+                                                                                    ID/Name</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect71">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Creatives
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Campaigns</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Campaigns
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 2nd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Source
+                                                                                    Name/ID</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sources
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Site</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Sites
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group ">
+                                                                                <label for="exampleFormControlSelect72"
+                                                                                    class="text-color">File
+                                                                                    Type</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect72">
+                                                                                    <option disabled selected hidden>
+                                                                                        All File Types
+                                                                                    </option>
+                                                                                    <option>.png
+                                                                                    </option>
+                                                                                    <option>.jpg
+                                                                                    </option>
+                                                                                    <option>.gif
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect73"
+                                                                                    class="text-color">Dimensions</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect73">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Dimensions
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- ================ 3rd row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group ">
+                                                                                <label for="exampleFormControlSelect74"
+                                                                                    class="text-color">Duration</label>
+                                                                                <select id="exampleFormControlSelect74"
+                                                                                    class="form-control">
+                                                                                    <option disabled selected hidden
+                                                                                        class="text-dark">
+                                                                                        All Duration
+                                                                                    </option>
+                                                                                    <option>5-10 Seconds
+                                                                                    </option>
+                                                                                    <option>10-15
+                                                                                        Seconds</option>
+                                                                                    <option>15-20
+                                                                                        Seconds</option>
+                                                                                    <option>20-25
+                                                                                        Seconds</option>
+                                                                                    <option>25-30
+                                                                                        Seconds</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect75"
+                                                                                    class="text-color">Countries</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect75">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Countries
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect76"
+                                                                                    class="text-color">Labels</label>
+                                                                                <select class="form-control"
+                                                                                    id="exampleFormControlSelect76">
+                                                                                    <option disabled selected hidden>
+                                                                                        All Labels
+                                                                                    </option>
+                                                                                    <option></option>
+                                                                                    <option></option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Target
+                                                                                    Group</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Target
+                                                                                        Groups</option>
+                                                                                    <option>Straight
+                                                                                    </option>
+                                                                                    <option>Gay</option>
+                                                                                    <option>All</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <!-- ================ 4th row ================ -->
+                                                                    <div class="row mt-4">
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect class="
+                                                                                    text-color">Review
+                                                                                    Status</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All</option>
+                                                                                    <option>Approved
+                                                                                    </option>
+                                                                                    <option>Pending
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Animation
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Animation
+                                                                                        Flags</option>
+                                                                                    <option>No Animation
+                                                                                    </option>
+                                                                                    <option>2 Second
+                                                                                    </option>
+                                                                                    <option>Full
+                                                                                        Animation
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="col-md-3 ">
+                                                                            <div class="form-group">
+                                                                                <label for="disabledSelect"
+                                                                                    class="text-color">Google
+                                                                                    Standard
+                                                                                    Flag</label>
+                                                                                <select class="form-control"
+                                                                                    id="disabledSelect" disabled>
+                                                                                    <option disabled selected hidden>
+                                                                                        All Flag
+                                                                                    </option>
+                                                                                    <option>Passed
+                                                                                    </option>
+                                                                                    <option>Failed
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+                                                                    <div class="row mt-5">
+                                                                        <div
+                                                                            class="col-md-12 d-flex justify-content-center">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-warning m-2">Apply
+                                                                                Filters</button>
+                                                                            <button type="button"
+                                                                                class="btn-purple m-2">Clear
+                                                                                Filters</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                                <!-- ================ form ================ -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- ================== Filter end================ -->
+
+                                </div>
+
+                                <!-- ============================================================ -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class=" border-dark border-1 rounded">
+                                            <div class="py-5 px-5 ">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr class="table-primary-color">
+                                                                <th scope="col">No.</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Action</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td>
+                                                                    <p class="mb-0">
+                                                                        <a class="btn" href="#" role="button">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ============================================================ -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================= Tab End ======================================== -->
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ===================================== form section End =======================================-->
+
+
+
+
+</div>
+<!-- /.container-fluid -->
