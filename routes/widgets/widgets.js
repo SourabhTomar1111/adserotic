@@ -40,17 +40,13 @@ router.post("/widgets/count", async function (req, res, next) {
       });
       if (widget == false) {
         db.query(`INSERT INTO count_tbl  SET ?`, labelData);
-      } else {
+      }else {
         const cou = widget[0].count;
         const data = parseInt(cou) + 1;
         const pub = widget[0].publisher_User_Id;
         const adv = widget[0].advertiser_user_id;
         const med = widget[0].media_id;
         const pag = widget[0].page_id;
-        console.log(pub,
-          adv,
-          med,
-          pag)
         db.query(
           `UPDATE count_tbl SET count='${data}' WHERE publisher_User_Id='${pub}' AND advertiser_user_id='${adv}' AND media_id='${med}' AND page_id='${pag}'`
         );

@@ -563,10 +563,7 @@ $('#media-tab1 a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
     var gal1 = da1.next('.gallery');
     gal1.html('');
-
-
-
-  }
+ }
 
   //get data here since rejected to data
   getData(type, _target);

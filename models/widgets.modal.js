@@ -6,7 +6,7 @@ const tbl_count = "count_tbl";
 module.exports = {
   list_widgets: async () => {
     let [rows] = await connection.query(
-      `SELECT  ${tbl_trans}.campaginID ,${tbl_trans}.publisher_page_id, ${tbl_trans}.advertiser_user_id, ${tbl_trans}.publisher_User_Id, ${tbl_trans}.media_id, ${tbl_trans}.price, ${tbl_media}.type, ${tbl_media}.name, ${tbl_media}.id FROM  ${tbl_trans}  join  ${tbl_media} ON  ${tbl_trans}.media_id= ${tbl_media}.id join  ${tbl_page} ON  ${tbl_trans}.publisher_page_id= ${tbl_page}.id WHERE ${tbl_page}.url = "http://dskl/.com"  `
+      `SELECT  ${tbl_trans}.campaginID ,${tbl_trans}.publisher_page_id, ${tbl_trans}.advertiser_user_id, ${tbl_trans}.publisher_User_Id, ${tbl_trans}.media_id, ${tbl_trans}.price, ${tbl_media}.type, ${tbl_media}.name, ${tbl_media}.id FROM  ${tbl_trans}  join  ${tbl_media} ON  ${tbl_trans}.media_id= ${tbl_media}.id join  ${tbl_page} ON  ${tbl_trans}.publisher_page_id= ${tbl_page}.id WHERE ${tbl_page}.url = "http://wefwef/.com"  `
     );
     // console.log(rows);
     if (rows.length) {

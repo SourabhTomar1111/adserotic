@@ -1,5 +1,5 @@
 const express = require("express");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const db = require("../config/db");
@@ -10,7 +10,7 @@ const {
 const { cb } = require("../validations/validator");
 const { getLocalDate } = require("../helpers/common");
 const pageModel = require("../models/page.model");
-const moment = require('moment')
+const moment = require("moment");
 //required models
 const { list } = require("../models/lable.model");
 const Group = require("../models/group.model");
@@ -18,8 +18,8 @@ const Keyword = require("../models/keyword.model");
 const Camp = require("../models/campaign.model");
 const camPage = require("../models/page.model");
 const transaction = require("../models/transaction.modal");
-const media = require('../models/medialibrary.modal')
-const userdata = require('../models/users.model')
+const media = require("../models/medialibrary.modal");
+const userdata = require("../models/users.model");
 router.get("/", function (req, res, next) {
   res.redirect("/advertiser/dashboard");
 });
@@ -59,7 +59,6 @@ router.get(
   [isAuthenticated],
   [isAdvertiser],
   async function (req, res) {
-   
     const campData = await Camp.list(req.session.user.id);
     res.render("advertiser/index", {
       page: "campaigns",
@@ -68,32 +67,6 @@ router.get(
     });
   }
 );
-
-// router.get(
-//   "/campaigns",
-//   [isAuthenticated],
-//   [isAdvertiser],
-//   async function (req, res) {
-
-//    const campData = await Camp.list(req.session.user.id);
-
-//     res.render("advertiser/index", { page: "campaigns", session: req.session, campData});
-//   }
-// );
-
-// router.get(
-//   "/campaigns",
-//   [isAuthenticated],
-//   [isAdvertiser],
-//   // [isPublisher],
-
-//   async function (req, res) {
-
-//    const campDataPage = await Camp.list();
-
-//     res.render("advertiser/index", { page: "campaigns",session: req.session, campDataPage});
-//   }
-// );
 
 // router.get('/campaigns/add_newd', function(req, res, next){
 //     res.render("advertiser/index", { page: "add_campaign", session: req.session});
@@ -180,57 +153,56 @@ router.post(
   "/change_password",
   [isAuthenticated],
   [isAdvertiser],
-  [
-    cb.validateOPassword,
-    cb.validateNPassword,
-    cb.validateCOPassword
-  ],
-async function (req, res, next) {
-const id = req.session.user.id;
-const passWd = await userdata.getUserData(id)
-const passwordInput = passWd[0].password;
-const password = req.body.olderpassword;
-const isMatch = await bcrypt.compare(password, passwordInput)
-const saltRounds = 10;
-const newpassword = req.body.newpassword;
-const confirmpassword = req.body.confirmpassword;
-const encryptednewpassword = await bcrypt.hash(confirmpassword, saltRounds)
-let str_msg = '';
-const errors = validationResult(req);
-if (!errors.isEmpty()) {
-  let err_msg = "";
-  if (errors.mapped()) {
-    err_msg = errors.mapped();
-  }
+  [cb.validateOPassword, cb.validateNPassword, cb.validateCOPassword],
+  async function (req, res, next) {
+    const id = req.session.user.id;
+    const passWd = await userdata.getUserData(id);
+    const passwordInput = passWd[0].password;
+    const password = req.body.olderpassword;
+    const isMatch = await bcrypt.compare(password, passwordInput);
+    const saltRounds = 10;
+    const newpassword = req.body.newpassword;
+    const confirmpassword = req.body.confirmpassword;
+    const encryptednewpassword = await bcrypt.hash(confirmpassword, saltRounds);
+    let str_msg = "";
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      let err_msg = "";
+      if (errors.mapped()) {
+        err_msg = errors.mapped();
+      }
 
-  for (let key in err_msg) {
-    str_msg += err_msg[key].msg + ", ";
-  }
-  // str_msg += "is required";
-  req.flash("error", str_msg);
-  res.redirect("/advertiser/change_password");
-  res.end();
-} else {
-if(isMatch && newpassword === confirmpassword)
-{
- db.query(`UPDATE users SET password='${encryptednewpassword}' WHERE id='${id}'`, function (error, results, fields) {
-    if (error) {
-      req.flash('error', 'Error occurred. : ' + error);
+      for (let key in err_msg) {
+        str_msg += err_msg[key].msg + ", ";
+      }
+      // str_msg += "is required";
+      req.flash("error", str_msg);
       res.redirect("/advertiser/change_password");
       res.end();
     } else {
-      req.flash('info', 'PASSWORD UPDATED SUCCESSFULLY !');
-      res.redirect("/advertiser/change_password");
-      res.end();
+      if (isMatch && newpassword === confirmpassword) {
+        db.query(
+          `UPDATE users SET password='${encryptednewpassword}' WHERE id='${id}'`,
+          function (error, results, fields) {
+            if (error) {
+              req.flash("error", "Error occurred. : " + error);
+              res.redirect("/advertiser/change_password");
+              res.end();
+            } else {
+              req.flash("info", "PASSWORD UPDATED SUCCESSFULLY !");
+              res.redirect("/advertiser/change_password");
+              res.end();
+            }
+          }
+        );
+      } else {
+        req.flash("info", "PASSWORD UPDATE FAILED!");
+        res.redirect("/advertiser/change_password");
+        res.end();
+      }
     }
-  });
-}else{
-  req.flash('info', 'PASSWORD UPDATE FAILED!');
-  res.redirect("/advertiser/change_password");
-  res.end();
-}
- }
-})
+  }
+);
 
 router.get(
   "/manage_label",
@@ -305,16 +277,18 @@ router.get(
     const lblData = await list(req.session.user.id);
     const grpData = await Group.list(req.session.user.id);
     const keyData = await Keyword.list();
-     const campData = await Camp.findOne({id: req.params.id, user_id: req.session.user.id})
-   
-    
+    const campData = await Camp.findOne({
+      id: req.params.id,
+      user_id: req.session.user.id,
+    });
+
     res.render("advertiser/index", {
       page: "view_campaign",
       session: req.session,
       lblData,
       grpData,
       keyData,
-      campData: campData[0]
+      campData: campData[0],
     });
   }
 );
@@ -344,42 +318,60 @@ router.get(
 
 //-----------------------view data--------------------------------
 
-router.get(
-  "/payment/:id",
-  [isAuthenticated],
-  [isAdvertiser],
-  async function (req, res, next) {
-    const campData = await Camp.findOne({
-      id: req.params.id,
-      user_id: req.session.user.id,
-    });
-    const campDataId = await camPage.list1();
-    var str;
-    var user_id;
-    var id;
-    var media_id;
+// router.get(
+//   "/payment/:id",
+//   [isAuthenticated],
+//   [isAdvertiser],
+//   async function (req, res, next) {
+//     const campData = await Camp.findOne({
+//       id: req.params.id,
+//       user_id: req.session.user.id,
+//     });
+//     const campDataId = await camPage.list1();
+//     var str;
+//     var user_id;
+//     var id;
+//     var media_id;
 
-    if (campData.length) {
-      campData.forEach(function (camp) {
-        media_id = camp.media_id
-        id = camp.id;
-        user_id = camp.user_id;
-        str = JSON.parse(camp.audience_exclusion_cookie);
-        
+//     if (campData.length) {
+//       campData.forEach(function (camp) {
+//         media_id = camp.media_id;
+//         id = camp.id;
+//         user_id = camp.user_id;
+//         str = JSON.parse(camp.audience_exclusion_cookie);
+//       });
+//     }
+//     res.render("advertiser/index", {
+//       page: "payment",
+//       session: req.session,
+//       campData: str[0].site_name,
+//       campDataId,
+//       user_id,
+//       media_id,
+//       id,
+//     });
+//   }
+// );
+
+
+router.get(
+    "/payment/:id",
+    [isAuthenticated],
+    [isAdvertiser],
+    async function (req, res, next) {
+      const campData = await Camp.findOne({
+        id: req.params.id,
+        user_id: req.session.user.id,
+      });
+      const campDataId = await camPage.list1();
+      res.render("advertiser/index", {
+        page: "payment",
+        session: req.session,
+        campData: campData[0],
+        campDataId,
       });
     }
-    res.render("advertiser/index", {
-      page: "payment",
-      session: req.session,
-      campData: str[0].site_name,
-      campDataId,
-      user_id,
-      media_id,
-      id
-    });
-   
-  }
-);
+  );
 
 router.get(
   "/add_campaign",
@@ -398,7 +390,7 @@ router.get(
       grpData,
       keyData,
       campData,
-      mediaLibrary
+      mediaLibrary,
     });
   }
 );
@@ -408,8 +400,14 @@ router.post(
   [isAuthenticated],
   [isAdvertiser],
   check("camp_name", "Campaign Name is required").notEmpty(),
-  check("audience_exclusion_cookie", "Audience_exclusion_cookie  is required").notEmpty(),
-  check("retargeting_cookie", "Audience_retargeting_cookie  is required").notEmpty(),
+  check(
+    "audience_exclusion_cookie",
+    "Audience_exclusion_cookie  is required"
+  ).notEmpty(),
+  check(
+    "retargeting_cookie",
+    "Audience_retargeting_cookie  is required"
+  ).notEmpty(),
   async function (req, res, next) {
     let str_msg = "";
     const errors = validationResult(req);
@@ -435,7 +433,7 @@ router.post(
         grpData,
         keyData,
         campData,
-        mediaLibrary
+        mediaLibrary,
       });
       res.end();
       return;
@@ -589,6 +587,5 @@ router.get("*", [isAuthenticated], function (req, res, next) {
   };
   res.render("error", data);
 });
-
 
 module.exports = router;

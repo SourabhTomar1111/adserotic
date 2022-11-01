@@ -33,8 +33,8 @@ module.exports.cb = {
     }
     return true;
    }),
-    validateName:    check('name').not().isEmpty().withMessage("Name is required"),
-    validateUser:    check('user').not().isEmpty().withMessage("User is required"),
+    validateName:  check('name').not().isEmpty().withMessage("Name is required"),
+    validateUser:  check('user').not().isEmpty().withMessage("User is required"),
     validateMessage: check('message').not().isEmpty().withMessage("Message is required"),
     validateOtp: check('verification_code').not().isEmpty().withMessage("Verification code is required"),
     validatePassword: check('p_password').not().isEmpty().withMessage('Password is required').isLength({ min: 6 }).withMessage('Atleast 6 Length'),

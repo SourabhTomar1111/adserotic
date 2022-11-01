@@ -1,4 +1,7 @@
-<section class= "bg-gradient-primary" >
+
+
+
+ <section class= "bg-gradient-primary" >
   <div class="container py-5">
     <div class="row d-flex justify-content-center">
       <div class="col-md-8 col-lg-6 col-xl-4">
@@ -12,33 +15,38 @@
               </div>
             </div>
             <form class="form-horizontal" role="form" action="/pay" method="post">
-                    <input
-                    type ="hidden"
-                    name="page"
-                    class=" text-center mb-0 text-primary"
-                    value="<%= campData %>"
-                    >
+              <% let aeC = JSON.parse(campData.audience_exclusion_cookie) %>
+              <% if(aeC.length){ %>
+              <% aeC.forEach(function(ae){ %>                                                                                                                    
+              <input
+              type ="hidden"
+              name="page"
+              class=" text-center mb-0 text-primary"
+              value="<%= ae.site_name %>"
+              >
+            
+                   
                     <input
                       type ="hidden"
                       name="Advertiser_User_Id"
                       class=" text-center mb-0 text-primary"
-                      value="<%=  user_id %>"
+                      value="<%=  campData.user_id %>"
                     >
                     <input
                       type ="hidden"
                       name="media_id"
                       class=" text-center mb-0 text-primary"
-                      value="<%=  media_id %>"
+                      value="<%=  campData.media_id %>"
                     >
                     <input
                       type ="hidden"
                       name="campaign_id"
                       class=" text-center mb-0 text-primary"
-                      value="<%= id %>"
+                      value="<%= campData.id %>"
                     >
                     <% if(campDataId.length){ %> 
                     <% campDataId.forEach(function(camp){
-                    %> <% if( campData == camp.id){ %>
+                    %> <% if( ae.site_name == camp.id){ %>
                     <input
                     type="hidden"
                     class=" form-control-sm text-center"
@@ -61,14 +69,14 @@
                       <h6 class="mb-0 text-primary pe-1">$</h6>
                       <% if(campDataId.length){ %> 
                         <% campDataId.forEach(function(camp){
-                      %> <% if( campData == camp.id){ %>
+                      %> <% if( ae.site_name == camp.id){ %>
                       <input
                         type="hidden"
                         class=" form-control-sm text-center"
                         placeholder="Enter Amount"
                         id="amount"
                         value= "<%= camp.price %>"
-                        name="amount"
+                        name="amount" 
                         style="width: 55px;"
                        >
                        <span><%= camp.price %></span>
@@ -80,6 +88,8 @@
                 </div>
               </div>
             </div>
+            <% }); %>
+            <% } %>
             <div class="d-flex justify-content-between align-items-center pb-1">
               <a href="/advertiser/campaigns" class="text-muted btn btn-outline-success ">Go back</a>
               <input type="submit" class="btn btn-outline-success ali" value="Pay">
@@ -91,4 +101,4 @@
     </div>
   </div>
 </section>
-<script src="/public/javascripts/script.js"></script>
+

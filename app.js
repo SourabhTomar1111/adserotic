@@ -16,6 +16,7 @@ const bodyParser = require("body-parser");
 const { paypall } = require("./middleware/Paypal");
 require("dotenv").config();
 const MySQLStore = require("express-mysql-session")(session);
+const db = require("./config/db");
 
 // test.beforeEach(t => {
 //   let root = document.getElementById('amount');
@@ -42,8 +43,7 @@ const pubRouter = require("./routes/publisher");
 const lblRouter = require("./routes/label");
 const mediaRouter = require("./routes/media");
 const campaignRouter = require("./routes/campaigns");
-const widgets = require('./routes/widgets/widgets')
-
+const widgets = require("./routes/widgets/widgets");
 
 const app = express();
 app.use(
@@ -68,51 +68,89 @@ let campagin_Id;
 let media_Id;
 let price;
 
-app.post("/pay", (req, res) => {
-  price = req.body.amount;
-  id = req.body.page;
-  publisher = req.body.publisher_url_id;
-  advertiser = req.body.Advertiser_User_Id;
-  campagin_Id = req.body.campaign_id;
-  media_Id = req.body.media_id;
-
-  const create_payment_json = {
-    intent: "sale",
-    payer: {
-      payment_method: "paypal",
-    },
-    redirect_urls: {
-      return_url: "http://localhost:8084/success",
-      cancel_url: "http://localhost:8084/cancel",
-    },
-    transactions: [
-      {
-        item_list: {
-          items: [
-            {
-              price: price,
-              currency: "USD",
-              quantity: 1,
-            },
-          ],
-        },
-        amount: {
-          currency: "USD",
-          total: price,
-        },
-        description: "Hat for the best team ever",
-      },
-    ],
-  };
-  paypal.payment.create(create_payment_json, function (error, payment) {
+app.post("/pay", async (req, res) => {
+  db.query("select id from pages", async function (error, results, fields) {
     if (error) {
-      throw error;
-    } else {
-      for (let i = 0; i < payment.links.length; i++) {
-        if (payment.links[i].rel === "approval_url") {
-          res.redirect(payment.links[i].href);
-        }
+      req.flash("error", "Error occurred. : " + error);
+      res.redirect("/advertiser/campaigns");
+    } else if (results.length > 0) {
+      if (results[0].id == req.body.page) {
+        db.query(
+          'select price, user_id, id from pages where pages.id="' +
+            req.body.page +
+            '" ',
+          function (error, results, fields) {
+            if (error) {
+              req.flash("error", "Error occurred. : " + error);
+              res.redirect("/advertiser/campaigns");
+            } else {
+              if (
+                results[0].price == req.body.amount &&
+                results[0].user_id == req.body.publisher_url_id
+              ) {
+                price = req.body.amount;
+                id = req.body.page;
+                publisher = req.body.publisher_url_id;
+                advertiser = req.body.Advertiser_User_Id;
+                campagin_Id = req.body.campaign_id;
+                media_Id = req.body.media_id;
+
+                const create_payment_json = {
+                  intent: "sale",
+                  payer: {
+                    payment_method: "paypal",
+                  },
+                  redirect_urls: {
+                    return_url: "http://localhost:8084/success",
+                    cancel_url: "http://localhost:8084/cancel",
+                  },
+                  transactions: [
+                    {
+                      item_list: {
+                        items: [
+                          {
+                            price: price,
+                            currency: "USD",
+                            quantity: 1,
+                          },
+                        ],
+                      },
+                      amount: {
+                        currency: "USD",
+                        total: price,
+                      },
+                      description: "Hat for the best team ever",
+                    },
+                  ],
+                };
+                paypal.payment.create(
+                  create_payment_json,
+                  function (error, payment) {
+                    if (error) {
+                      throw error;
+                    } else {
+                      for (let i = 0; i < payment.links.length; i++) {
+                        if (payment.links[i].rel === "approval_url") {
+                          res.redirect(payment.links[i].href);
+                        }
+                      }
+                    }
+                  }
+                );
+              } else {
+                res.redirect(`/advertiser/payment/${req.body.campaign_id}`);
+                res.end();
+              }
+            }
+          }
+        );
+      } else {
+        res.redirect(`/advertiser/payment/${req.body.campaign_id}`);
+        res.end();
       }
+    } else {
+      res.redirect(`/advertiser/payment/${req.body.campaign_id}`);
+      res.end();
     }
   });
 });
@@ -146,9 +184,12 @@ app.get("/success", (req, res) => {
         // console.log(payment.state);
         res.redirect("/advertiser/successs");
         const price = payment.transactions[0].item_list.items[0].price;
-        const transaction_Id = payment.transactions[0].related_resources[0].sale.id;
-        const create_time =payment.transactions[0].related_resources[0].sale.create_time;
-        const update_time = payment.transactions[0].related_resources[0].sale.update_time;
+        const transaction_Id =
+          payment.transactions[0].related_resources[0].sale.id;
+        const create_time =
+          payment.transactions[0].related_resources[0].sale.create_time;
+        const update_time =
+          payment.transactions[0].related_resources[0].sale.update_time;
         const status = payment.state;
         const publisher_Id = id;
         const Advertiser_User_Id = advertiser;
@@ -198,9 +239,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-
-
- //app.use('./public/static_banner', express.static('./public/static_banner'));
+//app.use('./public/static_banner', express.static('./public/static_banner'));
 
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
@@ -265,9 +304,7 @@ app.use("/publisher", pubRouter);
 app.use("/label", lblRouter);
 app.use("/media", mediaRouter);
 app.use("/campaign", campaignRouter);
-app.use('/visit', widgets)
-
-
+app.use("/visit", widgets);
 
 //Publisher's routes
 readdirSync("./routes/publisher").map((file) => {
